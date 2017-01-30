@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13E34E8C4EBCBACF7DA4929B /* Pods_ChannelProgramsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD02049842CAF9F42B6F2B6 /* Pods_ChannelProgramsTests.framework */; };
+		81A531A5104712BDCBCDFE82 /* Pods_ChannelPrograms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38103A03B8373DECED11FFD0 /* Pods_ChannelPrograms.framework */; };
+		C7697797298414432D530181 /* Pods_ChannelProgramsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829D4D6BB1A2C61B1B725E1E /* Pods_ChannelProgramsUITests.framework */; };
 		EB05C45B1E3F83E400C367D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C45A1E3F83E400C367D2 /* AppDelegate.swift */; };
-		EB05C45D1E3F83E400C367D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C45C1E3F83E400C367D2 /* ViewController.swift */; };
 		EB05C4601E3F83E400C367D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB05C45E1E3F83E400C367D2 /* Main.storyboard */; };
 		EB05C4631E3F83E400C367D2 /* ChannelPrograms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB05C4611E3F83E400C367D2 /* ChannelPrograms.xcdatamodeld */; };
 		EB05C4651E3F83E400C367D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB05C4641E3F83E400C367D2 /* Assets.xcassets */; };
 		EB05C4681E3F83E400C367D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB05C4661E3F83E400C367D2 /* LaunchScreen.storyboard */; };
 		EB05C4731E3F83E500C367D2 /* ChannelProgramsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C4721E3F83E500C367D2 /* ChannelProgramsTests.swift */; };
 		EB05C47E1E3F83E500C367D2 /* ChannelProgramsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C47D1E3F83E500C367D2 /* ChannelProgramsUITests.swift */; };
+		EB82E7B01E3FC5800020711E /* TransferToDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7AF1E3FC5800020711E /* TransferToDayTableViewController.swift */; };
+		EB82E7B21E3FC5ED0020711E /* ListOfAllTVTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B11E3FC5ED0020711E /* ListOfAllTVTableViewController.swift */; };
+		EB82E7B41E3FCC6C0020711E /* TvTodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */; };
+		EB82E7B61E3FCCD50020711E /* ProgramTvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */; };
+		EB82E7B81E3FCD580020711E /* CategotyTvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C056EA955D735307E7B4151 /* Pods-ChannelProgramsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelProgramsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelProgramsTests/Pods-ChannelProgramsTests.release.xcconfig"; sourceTree = "<group>"; };
+		194DE0CE944425193CF3F910 /* Pods-ChannelPrograms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelPrograms.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelPrograms/Pods-ChannelPrograms.release.xcconfig"; sourceTree = "<group>"; };
+		38103A03B8373DECED11FFD0 /* Pods_ChannelPrograms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChannelPrograms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB3E0FA2EC3CDB25F1B2F34 /* Pods-ChannelPrograms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelPrograms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelPrograms/Pods-ChannelPrograms.debug.xcconfig"; sourceTree = "<group>"; };
+		76E6114534317EC6BA1E2FEF /* Pods-ChannelProgramsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelProgramsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelProgramsUITests/Pods-ChannelProgramsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		829D4D6BB1A2C61B1B725E1E /* Pods_ChannelProgramsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChannelProgramsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D2922F8E0BD46B8B659382 /* Pods-ChannelProgramsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelProgramsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelProgramsTests/Pods-ChannelProgramsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFD02049842CAF9F42B6F2B6 /* Pods_ChannelProgramsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChannelProgramsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF2B5D09D3F64E14316A934 /* Pods-ChannelProgramsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChannelProgramsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChannelProgramsUITests/Pods-ChannelProgramsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB05C4571E3F83E400C367D2 /* ChannelPrograms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChannelPrograms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB05C45A1E3F83E400C367D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB05C45C1E3F83E400C367D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB05C45F1E3F83E400C367D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB05C4621E3F83E400C367D2 /* ChannelPrograms.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChannelPrograms.xcdatamodel; sourceTree = "<group>"; };
 		EB05C4641E3F83E400C367D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +64,11 @@
 		EB05C4791E3F83E500C367D2 /* ChannelProgramsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChannelProgramsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB05C47D1E3F83E500C367D2 /* ChannelProgramsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelProgramsUITests.swift; sourceTree = "<group>"; };
 		EB05C47F1E3F83E500C367D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB82E7AF1E3FC5800020711E /* TransferToDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferToDayTableViewController.swift; sourceTree = "<group>"; };
+		EB82E7B11E3FC5ED0020711E /* ListOfAllTVTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfAllTVTableViewController.swift; sourceTree = "<group>"; };
+		EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvTodayTableViewController.swift; sourceTree = "<group>"; };
+		EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTvTableViewController.swift; sourceTree = "<group>"; };
+		EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategotyTvTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A531A5104712BDCBCDFE82 /* Pods_ChannelPrograms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E34E8C4EBCBACF7DA4929B /* Pods_ChannelProgramsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7697797298414432D530181 /* Pods_ChannelProgramsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50770342D9568F1FA96959A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FB3E0FA2EC3CDB25F1B2F34 /* Pods-ChannelPrograms.debug.xcconfig */,
+				194DE0CE944425193CF3F910 /* Pods-ChannelPrograms.release.xcconfig */,
+				84D2922F8E0BD46B8B659382 /* Pods-ChannelProgramsTests.debug.xcconfig */,
+				0C056EA955D735307E7B4151 /* Pods-ChannelProgramsTests.release.xcconfig */,
+				DAF2B5D09D3F64E14316A934 /* Pods-ChannelProgramsUITests.debug.xcconfig */,
+				76E6114534317EC6BA1E2FEF /* Pods-ChannelProgramsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		92332CF7E5E32C49BCFC9881 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38103A03B8373DECED11FFD0 /* Pods_ChannelPrograms.framework */,
+				CFD02049842CAF9F42B6F2B6 /* Pods_ChannelProgramsTests.framework */,
+				829D4D6BB1A2C61B1B725E1E /* Pods_ChannelProgramsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB05C44E1E3F83E300C367D2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +129,8 @@
 				EB05C4711E3F83E500C367D2 /* ChannelProgramsTests */,
 				EB05C47C1E3F83E500C367D2 /* ChannelProgramsUITests */,
 				EB05C4581E3F83E400C367D2 /* Products */,
+				50770342D9568F1FA96959A9 /* Pods */,
+				92332CF7E5E32C49BCFC9881 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +148,12 @@
 			isa = PBXGroup;
 			children = (
 				EB05C45A1E3F83E400C367D2 /* AppDelegate.swift */,
-				EB05C45C1E3F83E400C367D2 /* ViewController.swift */,
 				EB05C45E1E3F83E400C367D2 /* Main.storyboard */,
+				EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */,
+				EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */,
+				EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */,
+				EB82E7B11E3FC5ED0020711E /* ListOfAllTVTableViewController.swift */,
+				EB82E7AF1E3FC5800020711E /* TransferToDayTableViewController.swift */,
 				EB05C4641E3F83E400C367D2 /* Assets.xcassets */,
 				EB05C4661E3F83E400C367D2 /* LaunchScreen.storyboard */,
 				EB05C4691E3F83E500C367D2 /* Info.plist */,
@@ -135,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB05C4821E3F83E500C367D2 /* Build configuration list for PBXNativeTarget "ChannelPrograms" */;
 			buildPhases = (
+				843EEE26E43C0D60AF94108C /* [CP] Check Pods Manifest.lock */,
 				EB05C4531E3F83E400C367D2 /* Sources */,
 				EB05C4541E3F83E400C367D2 /* Frameworks */,
 				EB05C4551E3F83E400C367D2 /* Resources */,
+				DA836213E290EA4264D42AE4 /* [CP] Embed Pods Frameworks */,
+				D15FF564A950DE8B9796EB99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB05C4851E3F83E500C367D2 /* Build configuration list for PBXNativeTarget "ChannelProgramsTests" */;
 			buildPhases = (
+				0116AB58450E62831B42733B /* [CP] Check Pods Manifest.lock */,
 				EB05C46A1E3F83E500C367D2 /* Sources */,
 				EB05C46B1E3F83E500C367D2 /* Frameworks */,
 				EB05C46C1E3F83E500C367D2 /* Resources */,
+				6D0F8024E59396340F6387C4 /* [CP] Embed Pods Frameworks */,
+				6006EAD5FDF2EDEB6816ED5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB05C4881E3F83E500C367D2 /* Build configuration list for PBXNativeTarget "ChannelProgramsUITests" */;
 			buildPhases = (
+				E9A71916A521F30708E4D014 /* [CP] Check Pods Manifest.lock */,
 				EB05C4751E3F83E500C367D2 /* Sources */,
 				EB05C4761E3F83E500C367D2 /* Frameworks */,
 				EB05C4771E3F83E500C367D2 /* Resources */,
+				45F3F4D1494886BB6552C864 /* [CP] Embed Pods Frameworks */,
+				FC0C534F4457E8EF1A180DCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,13 +321,155 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0116AB58450E62831B42733B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		45F3F4D1494886BB6552C864 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChannelProgramsUITests/Pods-ChannelProgramsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6006EAD5FDF2EDEB6816ED5F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChannelProgramsTests/Pods-ChannelProgramsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D0F8024E59396340F6387C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChannelProgramsTests/Pods-ChannelProgramsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		843EEE26E43C0D60AF94108C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D15FF564A950DE8B9796EB99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChannelPrograms/Pods-ChannelPrograms-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA836213E290EA4264D42AE4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChannelPrograms/Pods-ChannelPrograms-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9A71916A521F30708E4D014 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC0C534F4457E8EF1A180DCB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChannelProgramsUITests/Pods-ChannelProgramsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB05C4531E3F83E400C367D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EB05C4631E3F83E400C367D2 /* ChannelPrograms.xcdatamodeld in Sources */,
-				EB05C45D1E3F83E400C367D2 /* ViewController.swift in Sources */,
+				EB82E7B41E3FCC6C0020711E /* TvTodayTableViewController.swift in Sources */,
+				EB82E7B01E3FC5800020711E /* TransferToDayTableViewController.swift in Sources */,
+				EB82E7B21E3FC5ED0020711E /* ListOfAllTVTableViewController.swift in Sources */,
+				EB82E7B61E3FCCD50020711E /* ProgramTvTableViewController.swift in Sources */,
+				EB82E7B81E3FCD580020711E /* CategotyTvTableViewController.swift in Sources */,
 				EB05C45B1E3F83E400C367D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +620,9 @@
 		};
 		EB05C4831E3F83E500C367D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FB3E0FA2EC3CDB25F1B2F34 /* Pods-ChannelPrograms.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QBS7A4VQCM;
 				INFOPLIST_FILE = ChannelPrograms/Info.plist;
@@ -430,7 +635,9 @@
 		};
 		EB05C4841E3F83E500C367D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 194DE0CE944425193CF3F910 /* Pods-ChannelPrograms.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QBS7A4VQCM;
 				INFOPLIST_FILE = ChannelPrograms/Info.plist;
@@ -443,6 +650,7 @@
 		};
 		EB05C4861E3F83E500C367D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D2922F8E0BD46B8B659382 /* Pods-ChannelProgramsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +666,7 @@
 		};
 		EB05C4871E3F83E500C367D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C056EA955D735307E7B4151 /* Pods-ChannelProgramsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,6 +682,7 @@
 		};
 		EB05C4891E3F83E500C367D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAF2B5D09D3F64E14316A934 /* Pods-ChannelProgramsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QBS7A4VQCM;
@@ -487,6 +697,7 @@
 		};
 		EB05C48A1E3F83E500C367D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E6114534317EC6BA1E2FEF /* Pods-ChannelProgramsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QBS7A4VQCM;
@@ -518,6 +729,7 @@
 				EB05C4841E3F83E500C367D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB05C4851E3F83E500C367D2 /* Build configuration list for PBXNativeTarget "ChannelProgramsTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +738,7 @@
 				EB05C4871E3F83E500C367D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB05C4881E3F83E500C367D2 /* Build configuration list for PBXNativeTarget "ChannelProgramsUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +747,7 @@
 				EB05C48A1E3F83E500C367D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
