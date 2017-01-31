@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import SwiftyJSON
 
 class AllCategoryModel: Mappable {
 
@@ -15,8 +16,10 @@ class AllCategoryModel: Mappable {
     var titleCategory : String?
     var pictureCategory : String?
     
+   
     
-    required init?(map: Map) {}
+    required init?(map: Map) {
+    }
     
     func mapping(map: Map) {
         
