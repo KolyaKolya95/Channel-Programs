@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Transfer To Day Table View Controller-->
+        <!--Favorite Channel Table View Controller-->
         <scene sceneID="IXw-6x-VLa">
             <objects>
-                <tableViewController storyboardIdentifier="TransferToDayTableViewController" id="nQJ-bL-Qic" customClass="TransferToDayTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FavoriteChannelTableViewController" id="nQJ-bL-Qic" customClass="FavoriteChannelTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xru-Uw-Vkh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZ6-N6-ta4" id="e22-Hi-2ym">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -36,12 +36,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNH-7x-NH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682" y="-107"/>
+            <point key="canvasLocation" x="2033" y="-109"/>
         </scene>
         <!--All Channel-->
         <scene sceneID="qIK-uR-LJP">
             <objects>
-                <tableViewController storyboardIdentifier="ListOfAllTVTableViewController" id="8Mu-7U-IHg" customClass="ListOfAllTVTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllChannelTableViewController" id="8Mu-7U-IHg" customClass="AllChannelTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CHc-Oz-XUD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Bg-wF-K7B" id="INN-XU-OfT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -65,12 +65,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oro-CW-5ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="-107"/>
+            <point key="canvasLocation" x="703" y="-107"/>
         </scene>
         <!--Main-->
         <scene sceneID="nTH-LO-S1K">
             <objects>
-                <tableViewController id="fV3-3w-OW2" customClass="TvTodayTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TvTodayTableViewController" id="fV3-3w-OW2" customClass="TvTodayTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8yf-Os-GyQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtZ-ag-7kA" id="53K-zu-tOh">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -94,7 +94,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVa-ON-Sgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="-109"/>
+            <point key="canvasLocation" x="1397" y="-107"/>
         </scene>
         <!--Programs-->
         <scene sceneID="aLx-UP-K61">
@@ -109,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vje-jy-nJE" id="vd1-90-c9l">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -123,12 +123,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhV-8k-rhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2959" y="-110"/>
+            <point key="canvasLocation" x="2683" y="-108"/>
         </scene>
-        <!--list Channel-->
+        <!--Category -->
         <scene sceneID="KM6-OO-qwo">
             <objects>
-                <tableViewController id="Ofo-Lj-bvH" customClass="CategotyTvTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategotyTvTableViewController" id="Ofo-Lj-bvH" customClass="CategotyTvTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1an-0v-XYb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Lw-Gb-m7C" id="raT-0v-8dB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -148,11 +148,11 @@
                             <outlet property="delegate" destination="Ofo-Lj-bvH" id="TZo-ET-grc"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="list Channel" image="listChannel" id="JEo-fB-6SR"/>
+                    <tabBarItem key="tabBarItem" title="Category " image="listChannel" id="JEo-fB-6SR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O42-lb-6Uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3686" y="-114"/>
+            <point key="canvasLocation" x="3388" y="-107"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IR3-ac-XKN">
@@ -160,6 +160,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cQc-eN-mLb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="B7n-tU-giC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.92156862750000001" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,11 +168,11 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nQJ-bL-Qic" kind="relationship" relationship="viewControllers" id="9Wy-LY-6km"/>
-                        <segue destination="8Mu-7U-IHg" kind="relationship" relationship="viewControllers" id="ucE-VG-Wju"/>
                         <segue destination="fV3-3w-OW2" kind="relationship" relationship="viewControllers" id="KkR-rW-l2R"/>
                         <segue destination="uv5-fE-N5w" kind="relationship" relationship="viewControllers" id="sGt-jp-Lmw"/>
                         <segue destination="Ofo-Lj-bvH" kind="relationship" relationship="viewControllers" id="a7y-2F-Pe4"/>
+                        <segue destination="nQJ-bL-Qic" kind="relationship" relationship="viewControllers" id="foV-se-Eac"/>
+                        <segue destination="8Mu-7U-IHg" kind="relationship" relationship="viewControllers" id="3tK-z7-I07"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TC0-qa-T8M" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,6 +13,8 @@ class TvTodayTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,6 +25,18 @@ class TvTodayTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController is TvTodayTableViewController {
+            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "TvTodayTableViewController") {
+                tabBarController.present(newVC, animated: true)
+                return false
+            }
+        }
+        
+        return true
     }
 
     // MARK: - Table view data source

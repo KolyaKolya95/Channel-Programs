@@ -1,33 +1,23 @@
 //
-//  CategotyTvTableViewController.swift
+//  FavoriteChannelTableViewController.swift
 //  ChannelPrograms
 //
-//  Created by Kolya on 30.01.17.
+//  Created by Kolya on 31.01.17.
 //  Copyright © 2017 Kolya. All rights reserved.
 //
 
 import UIKit
-import ObjectMapper
-import Alamofire
-import SwiftyJSON
-import AlamofireObjectMapper
 
-class CategotyTvTableViewController: UITableViewController {
+class FavoriteChannelTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let URL = "http://52.50.138.211:8080/ChanelAPI/chanels"
-        
-        Alamofire.request(URL).responseObject { (response: DataResponse<AllCategoryModel>) in
-            
-            let categoryChannel = response.result.value
-            
-            print(categoryChannel?.idCategory as Any)
-            print(categoryChannel?.pictureCategory as Any)
-            print(categoryChannel?.titleCategory as Any)
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
 
-        }
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
