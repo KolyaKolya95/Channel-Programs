@@ -17,25 +17,33 @@ import AlamofireObjectMapper
 
 class TvTodayTableViewController: UITableViewController {
 
+    let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
+        self.downloadPrograms(for: timeStamp)
+    }
+    
+    func downloadPrograms(for timestamp: NSNumber) {
         
-        
-//        func downloadPrograms(for timestamp: Date.ReferenceType) {
-//            Alamofire.request(URL(string: "http://52.50.138.211:8080/ChanelAPI/programs/\(timestamp)")!).responseObject
-//                { (response: DataResponse<PrograToDayModel>) in
-//                    
-//                    let programArray = response.result.value
-//                    
-//                    if let programArray = programArray {
-//                        for program in programArray {
-//                            print(program.id as Any)
-//                           
-//                        }
-//                    }
-//            }
-//        }
-      
+        Alamofire.request("http://52.50.138.211:8080/ChanelAPI/programs/\(timestamp)").responseArray { (response: DataResponse<[PrograToDayModel]>) in
+            
+            let programlArray = response.result.value
+            
+            if let programlArray = programlArray {
+                for program in programlArray {
+//                    print(program.description as Any)
+//                    print(program.date as Any)
+//                    print(program.time as Any)
+//                    print(program.title as Any)
+                }
+            }
+            //Reload tableView on main thread
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,3 +63,5 @@ class TvTodayTableViewController: UITableViewController {
         return 0
     }
 }
+
+

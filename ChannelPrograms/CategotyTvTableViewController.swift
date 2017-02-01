@@ -14,18 +14,27 @@ import AlamofireObjectMapper
 
 class CategotyTvTableViewController: UITableViewController {
 
+    
+    var categotyArray = [AllCategoryModel]()
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let URL = "http://52.50.138.211:8080/ChanelAPI/chanels"
-        
-        Alamofire.request(URL).responseObject { (response: DataResponse<AllCategoryModel>) in
+        let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
+    
+        Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
             
-            let categoryChannel = response.result.value
+            let categorylArray = response.result.value
             
-            print(categoryChannel?.idCategory as Any)
-            print(categoryChannel?.pictureCategory as Any)
-            print(categoryChannel?.titleCategory as Any)
+            if let categorylArray = categorylArray {
+                for category in categorylArray {
+                     self.categotyArray.append(category)
+                    
+                }
+            }
+            self.tableView.reloadData()
 
         }
     }
@@ -39,67 +48,22 @@ class CategotyTvTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return categotyArray.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        
+//        cell.textLabel?.text = categotyArray[indexPath.row].title
+//        print(categotyArray[indexPath.row].title as Any)
+//        cell.textLabel?.text = categotyArray[indexPath.row].picture
+//         print(categotyArray[indexPath.row].title as Any)
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

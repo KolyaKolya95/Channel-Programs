@@ -12,20 +12,22 @@ import SwiftyJSON
 
 class AllCategoryModel: Mappable {
 
-    var idCategory: Int?
-    var titleCategory : String?
-    var pictureCategory : String?
+    var id: Int?
+    var title : String?
+    var picture : String?
     
    
     
     required init?(map: Map) {
+        
+        mapping(map: map)
     }
     
     func mapping(map: Map) {
         
-        idCategory<-map["id"]
-        titleCategory<-map["title"]
-        pictureCategory<-map["picture"]
+        id<-map["id"]
+        title<-map["title"]
+        picture<-map["picture"]
         
     }
 }
