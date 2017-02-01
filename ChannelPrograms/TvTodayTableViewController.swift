@@ -12,12 +12,11 @@ import Alamofire
 import SwiftyJSON
 import AlamofireObjectMapper
 
-
-
-
 class TvTodayTableViewController: UITableViewController {
 
     let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
+    
+    var toDayModell = [PrograToDayModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +32,10 @@ class TvTodayTableViewController: UITableViewController {
             
             if let programlArray = programlArray {
                 for program in programlArray {
-//                    print(program.description as Any)
-//                    print(program.date as Any)
-//                    print(program.time as Any)
-//                    print(program.title as Any)
+                    
+                    self.toDayModell.append(program)
                 }
             }
-            //Reload tableView on main thread
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -48,20 +44,31 @@ class TvTodayTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.toDayModell.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! MainTableViewCell
+        
+        cell.date.text = self.toDayModell[indexPath.row].date
+        cell.time.text = self.toDayModell[indexPath.row].time
+        cell.title.text = self.toDayModell[indexPath.row].title
+        cell.deskc.text = self.toDayModell[indexPath.row].description
+                
+        return cell
+    }
+
 }
 
 

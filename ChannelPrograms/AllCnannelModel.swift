@@ -14,7 +14,7 @@ class AllCnannelModel : Mappable {
     
     var  id : Int?
     var  name: String?
-    var  url : URL?
+    var  url : String?
     var  picture : URL?
     var  category_id: Int?
     

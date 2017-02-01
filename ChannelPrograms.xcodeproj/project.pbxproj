@@ -21,6 +21,8 @@
 		EB82E7B41E3FCC6C0020711E /* TvTodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */; };
 		EB82E7B61E3FCCD50020711E /* ProgramTvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */; };
 		EB82E7B81E3FCD580020711E /* CategotyTvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */; };
+		EBC4F2671E428CAE00FF9F22 /* AllChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F2661E428CAE00FF9F22 /* AllChannelTableViewCell.swift */; };
+		EBC4F2691E42947E00FF9F22 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F2681E42947E00FF9F22 /* MainTableViewCell.swift */; };
 		EBE611C81E4085DB00161BFA /* AllCnannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE611C71E4085DB00161BFA /* AllCnannelModel.swift */; };
 		EBE611CC1E408A2E00161BFA /* AllChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE611CB1E408A2E00161BFA /* AllChannelTableViewController.swift */; };
 		EBE611CE1E408A5700161BFA /* FavoriteChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE611CD1E408A5700161BFA /* FavoriteChannelTableViewController.swift */; };
@@ -71,6 +73,8 @@
 		EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvTodayTableViewController.swift; sourceTree = "<group>"; };
 		EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTvTableViewController.swift; sourceTree = "<group>"; };
 		EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategotyTvTableViewController.swift; sourceTree = "<group>"; };
+		EBC4F2661E428CAE00FF9F22 /* AllChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChannelTableViewCell.swift; sourceTree = "<group>"; };
+		EBC4F2681E42947E00FF9F22 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		EBE611C71E4085DB00161BFA /* AllCnannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCnannelModel.swift; sourceTree = "<group>"; };
 		EBE611CB1E408A2E00161BFA /* AllChannelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChannelTableViewController.swift; sourceTree = "<group>"; };
 		EBE611CD1E408A5700161BFA /* FavoriteChannelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteChannelTableViewController.swift; sourceTree = "<group>"; };
@@ -179,9 +183,19 @@
 			path = ChannelProgramsUITests;
 			sourceTree = "<group>";
 		};
+		EBC4F2651E428C6300FF9F22 /* StyleView  */ = {
+			isa = PBXGroup;
+			children = (
+				EBC4F2661E428CAE00FF9F22 /* AllChannelTableViewCell.swift */,
+				EBC4F2681E42947E00FF9F22 /* MainTableViewCell.swift */,
+			);
+			name = "StyleView ";
+			sourceTree = "<group>";
+		};
 		EBE611C31E4083E600161BFA /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				EBC4F2651E428C6300FF9F22 /* StyleView  */,
 				EBE611CD1E408A5700161BFA /* FavoriteChannelTableViewController.swift */,
 				EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */,
 				EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */,
@@ -505,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC4F2671E428CAE00FF9F22 /* AllChannelTableViewCell.swift in Sources */,
 				EB48BFD21E412D0D002FE984 /* PrograToDayModel.swift in Sources */,
 				EB05C4631E3F83E400C367D2 /* ChannelPrograms.xcdatamodeld in Sources */,
 				EBE611C81E4085DB00161BFA /* AllCnannelModel.swift in Sources */,
@@ -514,6 +529,7 @@
 				EB82E7B41E3FCC6C0020711E /* TvTodayTableViewController.swift in Sources */,
 				EB82E7B61E3FCCD50020711E /* ProgramTvTableViewController.swift in Sources */,
 				EB82E7B81E3FCD580020711E /* CategotyTvTableViewController.swift in Sources */,
+				EBC4F2691E42947E00FF9F22 /* MainTableViewCell.swift in Sources */,
 				EB05C45B1E3F83E400C367D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,7 +48,7 @@ class CategotyTvTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 5
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,10 +59,6 @@ class CategotyTvTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         
-//        cell.textLabel?.text = categotyArray[indexPath.row].title
-//        print(categotyArray[indexPath.row].title as Any)
-//        cell.textLabel?.text = categotyArray[indexPath.row].picture
-//         print(categotyArray[indexPath.row].title as Any)
         return cell
     }
     
