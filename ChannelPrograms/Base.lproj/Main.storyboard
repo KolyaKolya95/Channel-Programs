@@ -36,7 +36,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNH-7x-NH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2734" y="-559"/>
+            <point key="canvasLocation" x="2633" y="-559"/>
         </scene>
         <!--All Channel Table View Controller-->
         <scene sceneID="qIK-uR-LJP">
@@ -93,16 +93,16 @@
             </objects>
             <point key="canvasLocation" x="1121.25" y="-558.80281690140851"/>
         </scene>
-        <!--Tv Today Table View Controller-->
+        <!--Program Table View Controller-->
         <scene sceneID="nTH-LO-S1K">
             <objects>
-                <tableViewController id="fV3-3w-OW2" customClass="TvTodayTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="fV3-3w-OW2" customClass="ProgramTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="8yf-Os-GyQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="100" id="wtZ-ag-7kA" customClass="MainTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramTableViewCell" rowHeight="100" id="wtZ-ag-7kA" customClass="ProgramTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtZ-ag-7kA" id="53K-zu-tOh">
@@ -140,11 +140,12 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="date" destination="e3l-HN-q9o" id="Per-Q3-b07"/>
-                                    <outlet property="description" destination="Bil-De-Dli" id="2Bx-W7-hNp"/>
+                                    <outlet property="date" destination="e3l-HN-q9o" id="cj7-wm-w7C"/>
+                                    <outlet property="desc" destination="Bil-De-Dli" id="BoL-oS-GYP"/>
+                                    <outlet property="description" destination="Bil-De-Dli" id="Mge-Re-zW9"/>
                                     <outlet property="deskc" destination="Bil-De-Dli" id="msV-Ng-N2V"/>
-                                    <outlet property="time" destination="nPs-uX-RYT" id="8Mf-KH-A1v"/>
-                                    <outlet property="title" destination="Oce-d2-vHo" id="CBb-Fd-eNG"/>
+                                    <outlet property="time" destination="nPs-uX-RYT" id="bAN-hz-cZT"/>
+                                    <outlet property="title" destination="Oce-d2-vHo" id="fh9-h6-RSs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -159,45 +160,16 @@
             </objects>
             <point key="canvasLocation" x="990" y="696"/>
         </scene>
-        <!--Program Tv Table View Controller-->
-        <scene sceneID="aLx-UP-K61">
-            <objects>
-                <tableViewController storyboardIdentifier="ProgramTvTableViewController" id="uv5-fE-N5w" customClass="ProgramTvTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bnH-T0-nvX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vje-jy-nJE">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vje-jy-nJE" id="vd1-90-c9l">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="uv5-fE-N5w" id="TGI-6N-2ir"/>
-                            <outlet property="delegate" destination="uv5-fE-N5w" id="dtC-RH-hSH"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="G8h-yF-nu0"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uhV-8k-rhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2657" y="443"/>
-        </scene>
-        <!--Table View Controller-->
+        <!--Category Table View Controller-->
         <scene sceneID="KM6-OO-qwo">
             <objects>
-                <tableViewController id="Ofo-Lj-bvH" sceneMemberID="viewController">
+                <tableViewController id="Ofo-Lj-bvH" customClass="CategoryTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" id="1an-0v-XYb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="76" id="7Lw-Gb-m7C">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="76" id="7Lw-Gb-m7C" customClass="CategoryTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Lw-Gb-m7C" id="raT-0v-8dB">
@@ -209,7 +181,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nU-yv-gMC">
-                                            <rect key="frame" x="76" y="18" width="100" height="40"/>
+                                            <rect key="frame" x="76" y="18" width="236" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <nil key="textColor"/>
@@ -217,6 +189,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageCategory" destination="N87-CF-e2b" id="JXP-aH-dvN"/>
+                                    <outlet property="titleCategory" destination="3nU-yv-gMC" id="huB-3B-ZOS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -228,7 +204,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O42-lb-6Uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4352" y="-87"/>
+            <point key="canvasLocation" x="2632.5" y="694.0140845070423"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IR3-ac-XKN">
@@ -245,7 +221,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="2kI-yq-fLN" kind="relationship" relationship="viewControllers" id="KkR-rW-l2R"/>
-                        <segue destination="Xr2-dK-Cv7" kind="relationship" relationship="viewControllers" id="sGt-jp-Lmw"/>
                         <segue destination="HDU-3H-zKj" kind="relationship" relationship="viewControllers" id="foV-se-Eac"/>
                         <segue destination="wox-05-y6t" kind="relationship" relationship="viewControllers" id="3tK-z7-I07"/>
                         <segue destination="XsF-Qu-t6f" kind="relationship" relationship="viewControllers" id="wmM-VN-rjD"/>
@@ -291,13 +266,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sip-lE-adE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3533" y="-86"/>
+            <point key="canvasLocation" x="1869" y="695"/>
         </scene>
-        <!--Main-->
+        <!--Program-->
         <scene sceneID="VU3-WC-75v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2kI-yq-fLN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Main" image="TvOnDay" id="YLU-S9-pD6"/>
+                    <tabBarItem key="tabBarItem" title="Program" image="TVschedule" id="YLU-S9-pD6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W8q-f7-yFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -310,7 +285,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etA-NK-k0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="697"/>
+            <point key="canvasLocation" x="221" y="695"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UZK-G2-TWT">
@@ -329,31 +304,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bth-7F-1j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="-558"/>
-        </scene>
-        <!--Programs-->
-        <scene sceneID="XUU-ej-na7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xr2-dK-Cv7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Programs" image="TVschedule" id="UQ3-8y-o9a"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="67s-3k-jDX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uv5-fE-N5w" kind="relationship" relationship="rootViewController" id="a8k-dj-W12"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2M5-UN-Xsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1868" y="443"/>
+            <point key="canvasLocation" x="1868" y="-558"/>
         </scene>
     </scenes>
     <resources>
         <image name="TVschedule" width="20" height="20"/>
-        <image name="TvOnDay" width="20" height="20"/>
         <image name="allCnannel" width="20" height="20"/>
         <image name="listChannel" width="24" height="24"/>
     </resources>

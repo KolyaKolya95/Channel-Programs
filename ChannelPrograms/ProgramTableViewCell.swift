@@ -1,5 +1,5 @@
 //
-//  MainTableViewCell.swift
+//  ProgramTableViewCell.swift
 //  ChannelPrograms
 //
 //  Created by Kolya on 02.02.17.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell {
+class ProgramTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var time: UILabel!
- 
-    @IBOutlet weak var date: UILabel!
-    
     @IBOutlet weak var title: UILabel!
-    
-    @IBOutlet weak var deskc: UILabel!
+    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var date: UILabel!
 }

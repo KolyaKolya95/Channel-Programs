@@ -18,11 +18,11 @@
 		EB05C4731E3F83E500C367D2 /* ChannelProgramsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C4721E3F83E500C367D2 /* ChannelProgramsTests.swift */; };
 		EB05C47E1E3F83E500C367D2 /* ChannelProgramsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C47D1E3F83E500C367D2 /* ChannelProgramsUITests.swift */; };
 		EB48BFD21E412D0D002FE984 /* PrograToDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BFD11E412D0D002FE984 /* PrograToDayModel.swift */; };
-		EB82E7B41E3FCC6C0020711E /* TvTodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */; };
-		EB82E7B61E3FCCD50020711E /* ProgramTvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */; };
-		EB82E7B81E3FCD580020711E /* CategotyTvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */; };
+		EB95878E1E43322D003DCDD3 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95878D1E43322D003DCDD3 /* CategoryTableViewCell.swift */; };
+		EB9587901E433548003DCDD3 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95878F1E433548003DCDD3 /* CategoryTableViewController.swift */; };
+		EB9587921E4336D6003DCDD3 /* ProgramTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9587911E4336D6003DCDD3 /* ProgramTableViewController.swift */; };
+		EB9587941E43370A003DCDD3 /* ProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9587931E43370A003DCDD3 /* ProgramTableViewCell.swift */; };
 		EBC4F2671E428CAE00FF9F22 /* AllChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F2661E428CAE00FF9F22 /* AllChannelTableViewCell.swift */; };
-		EBC4F2691E42947E00FF9F22 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F2681E42947E00FF9F22 /* MainTableViewCell.swift */; };
 		EBE611C81E4085DB00161BFA /* AllCnannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE611C71E4085DB00161BFA /* AllCnannelModel.swift */; };
 		EBE611CC1E408A2E00161BFA /* AllChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE611CB1E408A2E00161BFA /* AllChannelTableViewController.swift */; };
 		EBE611CE1E408A5700161BFA /* FavoriteChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE611CD1E408A5700161BFA /* FavoriteChannelTableViewController.swift */; };
@@ -70,11 +70,11 @@
 		EB05C47D1E3F83E500C367D2 /* ChannelProgramsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelProgramsUITests.swift; sourceTree = "<group>"; };
 		EB05C47F1E3F83E500C367D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB48BFD11E412D0D002FE984 /* PrograToDayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrograToDayModel.swift; sourceTree = "<group>"; };
-		EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvTodayTableViewController.swift; sourceTree = "<group>"; };
-		EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTvTableViewController.swift; sourceTree = "<group>"; };
-		EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategotyTvTableViewController.swift; sourceTree = "<group>"; };
+		EB95878D1E43322D003DCDD3 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		EB95878F1E433548003DCDD3 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		EB9587911E4336D6003DCDD3 /* ProgramTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTableViewController.swift; sourceTree = "<group>"; };
+		EB9587931E43370A003DCDD3 /* ProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTableViewCell.swift; sourceTree = "<group>"; };
 		EBC4F2661E428CAE00FF9F22 /* AllChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChannelTableViewCell.swift; sourceTree = "<group>"; };
-		EBC4F2681E42947E00FF9F22 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		EBE611C71E4085DB00161BFA /* AllCnannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCnannelModel.swift; sourceTree = "<group>"; };
 		EBE611CB1E408A2E00161BFA /* AllChannelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChannelTableViewController.swift; sourceTree = "<group>"; };
 		EBE611CD1E408A5700161BFA /* FavoriteChannelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteChannelTableViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				EBC4F2661E428CAE00FF9F22 /* AllChannelTableViewCell.swift */,
-				EBC4F2681E42947E00FF9F22 /* MainTableViewCell.swift */,
+				EB95878D1E43322D003DCDD3 /* CategoryTableViewCell.swift */,
+				EB9587931E43370A003DCDD3 /* ProgramTableViewCell.swift */,
 			);
 			name = "StyleView ";
 			sourceTree = "<group>";
@@ -197,10 +198,9 @@
 			children = (
 				EBC4F2651E428C6300FF9F22 /* StyleView  */,
 				EBE611CD1E408A5700161BFA /* FavoriteChannelTableViewController.swift */,
-				EB82E7B31E3FCC6C0020711E /* TvTodayTableViewController.swift */,
-				EB82E7B51E3FCCD50020711E /* ProgramTvTableViewController.swift */,
-				EB82E7B71E3FCD580020711E /* CategotyTvTableViewController.swift */,
 				EBE611CB1E408A2E00161BFA /* AllChannelTableViewController.swift */,
+				EB95878F1E433548003DCDD3 /* CategoryTableViewController.swift */,
+				EB9587911E4336D6003DCDD3 /* ProgramTableViewController.swift */,
 				EB05C45E1E3F83E400C367D2 /* Main.storyboard */,
 				EB05C4661E3F83E400C367D2 /* LaunchScreen.storyboard */,
 			);
@@ -521,16 +521,16 @@
 			files = (
 				EBC4F2671E428CAE00FF9F22 /* AllChannelTableViewCell.swift in Sources */,
 				EB48BFD21E412D0D002FE984 /* PrograToDayModel.swift in Sources */,
+				EB9587921E4336D6003DCDD3 /* ProgramTableViewController.swift in Sources */,
 				EB05C4631E3F83E400C367D2 /* ChannelPrograms.xcdatamodeld in Sources */,
 				EBE611C81E4085DB00161BFA /* AllCnannelModel.swift in Sources */,
 				EBE611CC1E408A2E00161BFA /* AllChannelTableViewController.swift in Sources */,
 				EBE611CE1E408A5700161BFA /* FavoriteChannelTableViewController.swift in Sources */,
 				EBE611D21E40900300161BFA /* AllCategoryModel.swift in Sources */,
-				EB82E7B41E3FCC6C0020711E /* TvTodayTableViewController.swift in Sources */,
-				EB82E7B61E3FCCD50020711E /* ProgramTvTableViewController.swift in Sources */,
-				EB82E7B81E3FCD580020711E /* CategotyTvTableViewController.swift in Sources */,
-				EBC4F2691E42947E00FF9F22 /* MainTableViewCell.swift in Sources */,
+				EB9587941E43370A003DCDD3 /* ProgramTableViewCell.swift in Sources */,
 				EB05C45B1E3F83E400C367D2 /* AppDelegate.swift in Sources */,
+				EB95878E1E43322D003DCDD3 /* CategoryTableViewCell.swift in Sources */,
+				EB9587901E433548003DCDD3 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

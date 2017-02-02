@@ -31,11 +31,9 @@ class CategotyTvTableViewController: UITableViewController {
             if let categorylArray = categorylArray {
                 for category in categorylArray {
                      self.categotyArray.append(category)
-                    
                 }
+                   self.tableView.reloadData()
             }
-            self.tableView.reloadData()
-
         }
     }
 
@@ -53,11 +51,13 @@ class CategotyTvTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return categotyArray.count
+        return self.categotyArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
+        
+        cell.titleCategory.text = self.categotyArray[indexPath.row].title
         
         return cell
     }

@@ -1,23 +1,38 @@
 //
-//  ProgramTvTableViewController.swift
+//  CategoryTableViewController.swift
 //  ChannelPrograms
 //
-//  Created by Kolya on 30.01.17.
+//  Created by Kolya on 02.02.17.
 //  Copyright © 2017 Kolya. All rights reserved.
 //
 
 import UIKit
+import ObjectMapper
+import Alamofire
+import SwiftyJSON
+import AlamofireObjectMapper
 
-class ProgramTvTableViewController: UITableViewController {
+class CategoryTableViewController: UITableViewController {
 
+    var categoty = [AllCategoryModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
+        
+        Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
+            
+            let categorylArray = response.result.value
+            
+            if let categorylArray = categorylArray {
+                for category in categorylArray {
+                    self.categoty.append(category)
+                }
+                self.tableView.reloadData()
+            }
+        }
+    
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +44,24 @@ class ProgramTvTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.categoty.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
+
+        cell.titleCategory.text = self.categoty[indexPath.row].title
+
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

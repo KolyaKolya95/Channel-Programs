@@ -1,8 +1,8 @@
 //
-//  TvTodayTableViewController.swift
+//  ProgramTableViewController.swift
 //  ChannelPrograms
 //
-//  Created by Kolya on 30.01.17.
+//  Created by Kolya on 02.02.17.
 //  Copyright © 2017 Kolya. All rights reserved.
 //
 
@@ -12,16 +12,19 @@ import Alamofire
 import SwiftyJSON
 import AlamofireObjectMapper
 
-class TvTodayTableViewController: UITableViewController {
+class ProgramTableViewController: UITableViewController {
 
     let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
     
-    var toDayModell = [PrograToDayModel]()
+    var programs = [PrograToDayModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        super.viewDidLoad()
         let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
         self.downloadPrograms(for: timeStamp)
+
     }
     
     func downloadPrograms(for timestamp: NSNumber) {
@@ -33,8 +36,11 @@ class TvTodayTableViewController: UITableViewController {
             if let programlArray = programlArray {
                 for program in programlArray {
                     
-                    self.toDayModell.append(program)
+                    self.programs.append(program)
+                    print(program.title as Any)
                 }
+                
+                
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -44,31 +50,29 @@ class TvTodayTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
+        // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        // #warning Incomplete implementation, return the number of rows
+         print(self.programs.count as Any)
+        return self.programs.count
+       
     }
+
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-////        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! MainTableViewCell
-////        
-////        cell.date.text = self.toDayModell[indexPath.row].date
-////        cell.time.text = self.toDayModell[indexPath.row].time
-////        cell.title.text = self.toDayModell[indexPath.row].title
-////        cell.deskc.text = self.toDayModell[indexPath.row].description
-////                
-////        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgramTableViewCell", for: indexPath) as! ProgramTableViewCell
 
+        cell.title.text = self.programs[indexPath.row].title
+
+        return cell
+    }
 }
-
-
