@@ -20,11 +20,8 @@ class ProgramTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        super.viewDidLoad()
         let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
         self.downloadPrograms(for: timeStamp)
-
     }
     
     func downloadPrograms(for timestamp: NSNumber) {
@@ -35,12 +32,8 @@ class ProgramTableViewController: UITableViewController {
             
             if let programlArray = programlArray {
                 for program in programlArray {
-                    
                     self.programs.append(program)
-                    print(program.title as Any)
                 }
-                
-                
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -50,28 +43,25 @@ class ProgramTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-         print(self.programs.count as Any)
-        return self.programs.count
-       
+         return self.programs.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProgramTableViewCell", for: indexPath) as! ProgramTableViewCell
 
         cell.title.text = self.programs[indexPath.row].title
+        cell.allInfo.text  = self.programs[indexPath.row].description
+        cell.date.text = self.programs[indexPath.row].date
+        cell.time.text = self.programs[indexPath.row].time
 
         return cell
     }

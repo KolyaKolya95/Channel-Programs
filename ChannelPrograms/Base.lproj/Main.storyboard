@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZ6-N6-ta4" id="e22-Hi-2ym">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -51,10 +51,10 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Bg-wF-K7B" id="INN-XU-OfT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t6r-aa-kO4">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tv" translatesAutoresizingMaskIntoConstraints="NO" id="t6r-aa-kO4">
                                             <rect key="frame" x="8" y="9" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -106,44 +106,42 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtZ-ag-7kA" id="53K-zu-tOh">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-d2-vHo">
                                             <rect key="frame" x="116" y="12" width="150" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPs-uX-RYT">
                                             <rect key="frame" x="8" y="8" width="100" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3l-HN-q9o">
                                             <rect key="frame" x="8" y="57" width="100" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-De-Dli">
-                                            <rect key="frame" x="116" y="57" width="150" height="34"/>
+                                            <rect key="frame" x="122" y="57" width="190" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="date" destination="e3l-HN-q9o" id="cj7-wm-w7C"/>
-                                    <outlet property="desc" destination="Bil-De-Dli" id="BoL-oS-GYP"/>
-                                    <outlet property="description" destination="Bil-De-Dli" id="Mge-Re-zW9"/>
-                                    <outlet property="deskc" destination="Bil-De-Dli" id="msV-Ng-N2V"/>
+                                    <outlet property="allInfo" destination="Bil-De-Dli" id="bhW-bt-men"/>
+                                    <outlet property="date" destination="e3l-HN-q9o" id="BfO-Ht-a0Z"/>
                                     <outlet property="time" destination="nPs-uX-RYT" id="bAN-hz-cZT"/>
                                     <outlet property="title" destination="Oce-d2-vHo" id="fh9-h6-RSs"/>
                                 </connections>
@@ -158,7 +156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVa-ON-Sgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="696"/>
+            <point key="canvasLocation" x="990" y="695.07042253521126"/>
         </scene>
         <!--Category Table View Controller-->
         <scene sceneID="KM6-OO-qwo">
@@ -173,10 +171,10 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Lw-Gb-m7C" id="raT-0v-8dB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N87-CF-e2b">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tv" translatesAutoresizingMaskIntoConstraints="NO" id="N87-CF-e2b">
                                             <rect key="frame" x="8" y="8" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -190,8 +188,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageCategory" destination="N87-CF-e2b" id="JXP-aH-dvN"/>
+                                    <outlet property="fotoCat" destination="N87-CF-e2b" id="1d1-BB-Cf3"/>
                                     <outlet property="titleCategory" destination="3nU-yv-gMC" id="huB-3B-ZOS"/>
+                                    <segue destination="d7B-b0-gqD" kind="showDetail" trigger="accessoryAction" id="CJ0-Hj-eHX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -206,6 +205,34 @@
             </objects>
             <point key="canvasLocation" x="2632.5" y="694.0140845070423"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="az6-bT-cO2">
+            <objects>
+                <tableViewController id="d7B-b0-gqD" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qI3-j6-xId">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xhu-Qm-WgF">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xhu-Qm-WgF" id="Cvn-H2-C4c">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d7B-b0-gqD" id="FPU-Lw-DMJ"/>
+                            <outlet property="delegate" destination="d7B-b0-gqD" id="QDC-CQ-iYG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HfF-5J-owE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3510" y="695"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IR3-ac-XKN">
             <objects>
@@ -216,7 +243,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.92156862750000001" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.74117647060000003" green="0.1764705882" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -239,6 +266,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ywi-F8-OUT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.74117647060000003" green="0.1764705882" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -258,6 +287,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="81G-iR-p13">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.74117647060000003" green="0.1764705882" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -272,11 +303,13 @@
         <scene sceneID="VU3-WC-75v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2kI-yq-fLN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Program" image="TVschedule" id="YLU-S9-pD6"/>
+                    <tabBarItem key="tabBarItem" title="Program" image="TvOnDay" id="YLU-S9-pD6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W8q-f7-yFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.74117647060000003" green="0.1764705882" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -296,6 +329,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5lt-1w-vNx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.74117647060000003" green="0.1764705882" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -308,8 +343,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TVschedule" width="20" height="20"/>
+        <image name="TvOnDay" width="20" height="20"/>
         <image name="allCnannel" width="20" height="20"/>
         <image name="listChannel" width="24" height="24"/>
+        <image name="tv" width="60" height="60"/>
     </resources>
 </document>

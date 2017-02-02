@@ -12,17 +12,13 @@ import SwiftyJSON
 
 class PrograToDayModel: Mappable {
     
-    var channel_id : Int = 0
+    var channel_id : Int?
     var date : String?
     var time : String?
     var title : String?
     var description : String?
     
-    
-    required init?(map: Map) {
-        
-        mapping(map: map)
-    }
+    required init?(map: Map) {}
     
     func mapping(map: Map) {
         

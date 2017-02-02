@@ -15,10 +15,14 @@ class AllCnannelModel : Mappable {
     var  id : Int?
     var  name: String?
     var  url : String?
-    var  picture : URL?
+    var  picture : String
     var  category_id: Int?
     
-    required init?(map: Map) {}
+    required init?(map: Map) {
+        
+        picture = ""
+        
+    }
     
     func mapping(map: Map) {
         id<-map["id"]

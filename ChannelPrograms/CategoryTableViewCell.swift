@@ -9,9 +9,9 @@
 import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
-
-  
-    @IBOutlet weak var imageCategory: UIImageView!
+    
+    @IBOutlet weak var fotoCat: UIImageView!
 
     @IBOutlet weak var titleCategory: UILabel!
+    
 }
