@@ -16,4 +16,8 @@ class ProgramDara: Object {
     dynamic var title = ""
     dynamic var desc = ""
     dynamic var created = NSDate()
+    
+//    override static func primaryKey() -> String? {
+//        return "id"
+//    }
 }

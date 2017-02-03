@@ -19,9 +19,7 @@ class AllCnannelModel : Mappable {
     var  category_id: Int?
     
     required init?(map: Map) {
-        
         picture = ""
-        
     }
     
     func mapping(map: Map) {

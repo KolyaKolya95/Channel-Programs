@@ -14,5 +14,10 @@ class CategoryData: Object {
     dynamic var id = 0
     dynamic var title = ""
     dynamic var picture = ""
-    dynamic var created = NSDate()
+    
+    override static func primaryKey() -> String? {
+        return "id"   
+    }
 }
+
+

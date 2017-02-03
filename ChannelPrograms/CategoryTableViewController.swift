@@ -17,27 +17,48 @@ class CategoryTableViewController: UITableViewController {
 
     var categoryChannel = [AllCategoryModel]()
     
+    let realm = try! Realm()
     
+    lazy var categories: Results<CategoryData> = { self.realm.objects(CategoryData.self) }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
-        
-        Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
-            
-            let categorylArray = response.result.value
-            
-            if let categorylArray = categorylArray {
-                for category in categorylArray {
-                    self.categoryChannel.append(category)
-                }
-                self.tableView.reloadData()
-            }
-        }
+        defaultCategories()
+       // self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func defaultCategories() {
+        
+        if categories.count == 0 {
+            
+                let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
+                
+                Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
+                    
+                    let categorylArray = response.result.value
+                    
+                    if let categorylArray = categorylArray {
+                        for category in categorylArray {
+                            try! self.realm.write() {
+                                
+                            let newCategory = CategoryData()
+                            newCategory.id = category.id!
+                            newCategory.title = category.title!
+                            
+                            self.realm.add(newCategory, update: true)
+                            print(newCategory.title)
+                            //print(newCategory.id)
+                        }
+                    }
+                }
+            }
+            self.tableView.reloadData()
+            categories = realm.objects(CategoryData.self)
+        }
     }
     
     func verifyUrl (urlString: String?) -> Bool {
@@ -56,26 +77,33 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categoryChannel.count
+        print(self.categories.count as Any)
+        return self.categories.count
+       
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         
-        let imageUrl = categoryChannel[indexPath.row].pictures
+//        let imageUrl = categoryChannel[indexPath.row].pictures
+//        
+//        let flag = true
+//        
+//        cell.titleCategory.text = self.categoryChannel[indexPath.row].title
+//        
+//        if flag ==  self.verifyUrl(urlString: imageUrl) {
+//            cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
+//             print (verifyUrl)
+//             print(imageUrl as Any)
+//        }else {
+//            print(Error.self)
+//        }
         
-        let flag = true
+        cell.titleCategory.text = self.categories[indexPath.row].title
         
-        cell.titleCategory.text = self.categoryChannel[indexPath.row].title
         
-        if flag ==  self.verifyUrl(urlString: imageUrl) {
-            cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
-             print (verifyUrl)
-             print(imageUrl as Any)
-        }else {
-            print(Error.self)
-        }
         return cell
+        
     }
 }
 
