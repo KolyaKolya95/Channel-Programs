@@ -15,4 +15,5 @@ class ChannelData: Object {
     dynamic var  url  = ""
     dynamic var  picture = ""
     dynamic var  category_id = 0
+    dynamic var created = NSDate()
 }

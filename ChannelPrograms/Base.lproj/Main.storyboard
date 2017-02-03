@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,17 +14,30 @@
         <scene sceneID="IXw-6x-VLa">
             <objects>
                 <tableViewController storyboardIdentifier="FavoriteChannelTableViewController" id="nQJ-bL-Qic" customClass="FavoriteChannelTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xru-Uw-Vkh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="xru-Uw-Vkh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xZ6-N6-ta4">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="xZ6-N6-ta4">
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZ6-N6-ta4" id="e22-Hi-2ym">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-E4-lBD">
+                                            <rect key="frame" x="8" y="4" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAi-2A-ukp">
+                                            <rect key="frame" x="96" y="24" width="216" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -36,7 +50,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNH-7x-NH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633" y="-559"/>
+            <point key="canvasLocation" x="2632.5" y="-559.85915492957747"/>
         </scene>
         <!--All Channel Table View Controller-->
         <scene sceneID="qIK-uR-LJP">
@@ -86,7 +100,9 @@
                             <outlet property="delegate" destination="8Mu-7U-IHg" id="tR8-eU-pVW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vCL-kK-H0D"/>
+                    <navigationItem key="navigationItem" id="vCL-kK-H0D">
+                        <barButtonItem key="rightBarButtonItem" image="save" id="hH9-vU-0fL"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oro-CW-5ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,7 +168,16 @@
                             <outlet property="delegate" destination="fV3-3w-OW2" id="TGK-UP-mba"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vPM-uv-E6Z"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vPM-uv-E6Z">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Day" id="NBi-pa-qwN"/>
+                            <barButtonItem title="Week" id="Qst-ME-9ZR"/>
+                            <barButtonItem title="Mounth" id="d2Q-P2-ysc"/>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="sarver" id="kGs-JH-bWW"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVa-ON-Sgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -346,6 +371,8 @@
         <image name="TvOnDay" width="20" height="20"/>
         <image name="allCnannel" width="20" height="20"/>
         <image name="listChannel" width="24" height="24"/>
+        <image name="sarver" width="24" height="24"/>
+        <image name="save" width="24" height="24"/>
         <image name="tv" width="60" height="60"/>
     </resources>
 </document>

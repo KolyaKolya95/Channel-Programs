@@ -11,10 +11,13 @@ import ObjectMapper
 import Alamofire
 import SwiftyJSON
 import AlamofireObjectMapper
+import RealmSwift
 
 class CategoryTableViewController: UITableViewController {
 
-    var category = [AllCategoryModel]()
+    var categoryChannel = [AllCategoryModel]()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +29,13 @@ class CategoryTableViewController: UITableViewController {
             
             if let categorylArray = categorylArray {
                 for category in categorylArray {
-                    self.category.append(category)
+                    self.categoryChannel.append(category)
                 }
                 self.tableView.reloadData()
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -45,32 +48,33 @@ class CategoryTableViewController: UITableViewController {
         }
         return false
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.category.count
+        return self.categoryChannel.count
     }
-
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         
-        let imageUrl = category[indexPath.row].pictures
+        let imageUrl = categoryChannel[indexPath.row].pictures
         
-        self.verifyUrl(urlString: imageUrl)
+        let flag = true
         
-        print (verifyUrl)
-        print(imageUrl as Any)
+        cell.titleCategory.text = self.categoryChannel[indexPath.row].title
         
-        cell.titleCategory.text = self.category[indexPath.row].title
-        
-    //    cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
-        
+        if flag ==  self.verifyUrl(urlString: imageUrl) {
+            cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
+             print (verifyUrl)
+             print(imageUrl as Any)
+        }else {
+            print(Error.self)
+        }
         return cell
     }
 }
