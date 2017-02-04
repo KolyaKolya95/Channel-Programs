@@ -1,5 +1,5 @@
 //
-//  SaveChannels.swift
+//  SaveIdCategory.swift
 //  ChannelPrograms
 //
 //  Created by Kolya on 04.02.17.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SaveChannel {
-    func save (title: String, image: String)
+protocol saveIdCategory {
+    func saveid(id: Int)
 }

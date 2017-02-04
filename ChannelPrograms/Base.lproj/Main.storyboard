@@ -190,11 +190,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="76" id="7Lw-Gb-m7C" customClass="CategoryTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="76" id="7Lw-Gb-m7C" customClass="CategoryTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Lw-Gb-m7C" id="raT-0v-8dB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tv" translatesAutoresizingMaskIntoConstraints="NO" id="N87-CF-e2b">
@@ -236,11 +236,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="Xhu-Qm-WgF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FindFilmCategoryTableViewCell" rowHeight="97" id="Xhu-Qm-WgF" customClass="FindFilmCategoryTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xhu-Qm-WgF" id="Cvn-H2-C4c">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tv" translatesAutoresizingMaskIntoConstraints="NO" id="UTC-7x-UCx">
@@ -256,6 +256,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleTv" destination="1B1-sE-fq6" id="VwC-j4-dmQ"/>
+                                    <outlet property="tvImages" destination="UTC-7x-UCx" id="OvL-yx-qjj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -263,11 +267,17 @@
                             <outlet property="delegate" destination="d7B-b0-gqD" id="QDC-CQ-iYG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5es-rg-lxr"/>
+                    <navigationItem key="navigationItem" id="5es-rg-lxr">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="d4B-A6-kmD">
+                            <connections>
+                                <action selector="BackCategory:" destination="d7B-b0-gqD" id="5M2-MD-eX9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfF-5J-owE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4507.5" y="694.0140845070423"/>
+            <point key="canvasLocation" x="4708.125" y="701.4084507042254"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IR3-ac-XKN">
@@ -365,6 +375,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HDU-3H-zKj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Zzo-o3-JNo"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="d0C-uR-na5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5lt-1w-vNx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -382,22 +393,24 @@
             <point key="canvasLocation" x="1868" y="-558"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="0vp-4b-W7z">
+        <scene sceneID="Nxe-NZ-qWz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eaa-cJ-7SP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J0A-rs-hQq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xh1-lV-sfc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CrA-gz-8NE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.74117647060000003" green="0.1764705882" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="d7B-b0-gqD" kind="relationship" relationship="rootViewController" id="gkF-q9-ZFx"/>
+                        <segue destination="d7B-b0-gqD" kind="relationship" relationship="rootViewController" id="c7I-Bn-gCQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R2L-hm-zzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SR-ID-aTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3510" y="694.0140845070423"/>
+            <point key="canvasLocation" x="3710.625" y="701.4084507042254"/>
         </scene>
     </scenes>
     <resources>

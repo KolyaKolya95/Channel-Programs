@@ -19,6 +19,10 @@ class CategoryTableViewController: UITableViewController {
     
     let realm = try! Realm()
     
+    var delegate: saveIdCategory?
+    
+    var idCategories = 0
+    
     lazy var categories: Results<CategoryData> = { self.realm.objects(CategoryData.self) }()
     
     override func viewDidLoad() {
@@ -95,21 +99,42 @@ class CategoryTableViewController: UITableViewController {
         }
         
         cell.titleCategory.text = self.categories[indexPath.row].title
-        
-        cell.textLabel?.tag = self.categories[indexPath.row].id
-        cell.textLabel?.isHidden = false
-        
         return cell
+        
     }
     
+    
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    
+//        let categoryFound  = self.storyboard!.instantiateViewController(withIdentifier: "CategoryFindTableViewController") as! CategoryFindTableViewController
+//        
+//        let cellIdCategories = self.categories[indexPath.row]
+//
+//        
+//        categoryFound.idForFound = cellIdCategories.id
+//        
+//        present(categoryFound, animated:true, completion: nil)
+//        
+//        s
+//        
+//        print(idPep)
+//    }
+    var idPep : Int = 0
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         
         let categoryFound  = self.storyboard!.instantiateViewController(withIdentifier: "CategoryFindTableViewController") as! CategoryFindTableViewController
         self.navigationController?.pushViewController(categoryFound, animated: true)
         
-        print(cell.textLabel?.tag as Any)
+        let cellIdCategories = self.categories[indexPath.row]
+        
+        self.idPep = cellIdCategories.id
+        
+        categoryFound.idForFound = cellIdCategories.id
+       
+       // present(categoryFound, animated:true, completion: nil)
+        print(idPep)
     }
 }
 
