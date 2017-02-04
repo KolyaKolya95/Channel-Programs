@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class ProgramDara: Object {
+class ProgramData: Object {
     dynamic var channel_id = 0
     dynamic var date = ""
     dynamic var time = ""
@@ -17,7 +17,7 @@ class ProgramDara: Object {
     dynamic var desc = ""
     dynamic var created = NSDate()
     
-//    override static func primaryKey() -> String? {
-//        return "id"
-//    }
+    override static func primaryKey() -> String? {
+        return "channel_id"
+    }
 }

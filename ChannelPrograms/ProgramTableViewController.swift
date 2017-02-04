@@ -11,20 +11,28 @@ import ObjectMapper
 import Alamofire
 import SwiftyJSON
 import AlamofireObjectMapper
+import RealmSwift
 
 class ProgramTableViewController: UITableViewController {
 
     let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
     
+    let realm = try! Realm()
+    
     var programs = [PrograToDayModel]()
+    
+    lazy var prog: Results<ProgramData> = { self.realm.objects(ProgramData.self) }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
         self.downloadPrograms(for: timeStamp)
+        self.tableView.reloadData()
     }
     
     func downloadPrograms(for timestamp: NSNumber) {
+        
+        if prog.count == 0 {
         
         Alamofire.request("http://52.50.138.211:8080/ChanelAPI/programs/\(timestamp)").responseArray { (response: DataResponse<[PrograToDayModel]>) in
             
@@ -32,12 +40,29 @@ class ProgramTableViewController: UITableViewController {
             
             if let programlArray = programlArray {
                 for program in programlArray {
-                    self.programs.append(program)
+                   // self.programs.append(program)
+                    
+                    try! self.realm.write() {
+                        
+                        let newProgram = ProgramData()
+                        newProgram.channel_id = program.channel_id!
+                        newProgram.date = program.date!
+                        newProgram.title = program.title!
+                        newProgram.desc = program.description!
+                        newProgram.time = program.time!
+                        
+                        self.realm.add(newProgram, update: true)
+                        
+                    }
                 }
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.prog = self.realm.objects(ProgramData.self)
+                }
             }
+        }else{
+        
         }
     }
 
@@ -52,17 +77,15 @@ class ProgramTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return self.programs.count
+         return self.prog.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProgramTableViewCell", for: indexPath) as! ProgramTableViewCell
-
-        cell.title.text = self.programs[indexPath.row].title
-        cell.allInfo.text  = self.programs[indexPath.row].description
-        cell.date.text = self.programs[indexPath.row].date
-        cell.time.text = self.programs[indexPath.row].time
-
+        cell.title.text = self.prog[indexPath.row].title
+        cell.allInfo.text = self.prog[indexPath.row].desc
+        cell.date.text = self.prog[indexPath.row].date
+        cell.time.text = self.prog[indexPath.row].time
         return cell
     }
 }

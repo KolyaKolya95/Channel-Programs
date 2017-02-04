@@ -100,9 +100,7 @@
                             <outlet property="delegate" destination="8Mu-7U-IHg" id="tR8-eU-pVW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vCL-kK-H0D">
-                        <barButtonItem key="rightBarButtonItem" image="save" id="hH9-vU-0fL"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="vCL-kK-H0D"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oro-CW-5ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,7 +213,6 @@
                                 <connections>
                                     <outlet property="fotoCat" destination="N87-CF-e2b" id="1d1-BB-Cf3"/>
                                     <outlet property="titleCategory" destination="3nU-yv-gMC" id="huB-3B-ZOS"/>
-                                    <segue destination="d7B-b0-gqD" kind="showDetail" trigger="accessoryAction" id="CJ0-Hj-eHX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -230,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="2632.5" y="694.0140845070423"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Category Find Table View Controller-->
         <scene sceneID="az6-bT-cO2">
             <objects>
-                <tableViewController id="d7B-b0-gqD" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryFindTableViewController" id="d7B-b0-gqD" customClass="CategoryFindTableViewController" customModule="ChannelPrograms" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qI3-j6-xId">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,10 +250,11 @@
                             <outlet property="delegate" destination="d7B-b0-gqD" id="QDC-CQ-iYG"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="5es-rg-lxr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfF-5J-owE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3510" y="695"/>
+            <point key="canvasLocation" x="4507.5" y="694.0140845070423"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IR3-ac-XKN">
@@ -266,8 +264,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="B7n-tU-giC">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.92156862750000001" green="0.92941176469999998" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.74117647060000003" green="0.1764705882" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -370,13 +368,30 @@
             </objects>
             <point key="canvasLocation" x="1868" y="-558"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0vp-4b-W7z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eaa-cJ-7SP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xh1-lV-sfc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d7B-b0-gqD" kind="relationship" relationship="rootViewController" id="gkF-q9-ZFx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2L-hm-zzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3510" y="694.0140845070423"/>
+        </scene>
     </scenes>
     <resources>
         <image name="TvOnDay" width="20" height="20"/>
         <image name="allCnannel" width="20" height="20"/>
         <image name="listChannel" width="24" height="24"/>
         <image name="sarver" width="24" height="24"/>
-        <image name="save" width="24" height="24"/>
         <image name="tv" width="60" height="60"/>
     </resources>
 </document>

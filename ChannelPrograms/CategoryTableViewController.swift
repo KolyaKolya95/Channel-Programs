@@ -24,11 +24,12 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultCategories()
-       // self.tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+         self.tableView.reloadData()
     }
     
     func defaultCategories() {
@@ -48,16 +49,17 @@ class CategoryTableViewController: UITableViewController {
                             let newCategory = CategoryData()
                             newCategory.id = category.id!
                             newCategory.title = category.title!
+                            newCategory.picture = category.pictures
                             
                             self.realm.add(newCategory, update: true)
-                            print(newCategory.title)
-                            //print(newCategory.id)
+                            print(newCategory.picture)
                         }
                     }
                 }
             }
             self.tableView.reloadData()
             categories = realm.objects(CategoryData.self)
+        }else{
         }
     }
     
@@ -77,7 +79,7 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(self.categories.count as Any)
+     //   print(self.categories.count as Any)
         return self.categories.count
        
     }
@@ -85,25 +87,31 @@ class CategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         
-//        let imageUrl = categoryChannel[indexPath.row].pictures
-//        
-//        let flag = true
-//        
-//        cell.titleCategory.text = self.categoryChannel[indexPath.row].title
-//        
-//        if flag ==  self.verifyUrl(urlString: imageUrl) {
-//            cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
-//             print (verifyUrl)
-//             print(imageUrl as Any)
-//        }else {
-//            print(Error.self)
-//        }
+        let imageUrl = self.categories[indexPath.row].picture
+        
+        print(self.categories[indexPath.row].picture)
+        
+        let flag = true
+
+        if flag ==  self.verifyUrl(urlString: imageUrl) {
+            
+            cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
+            
+            print (verifyUrl)
+            print(imageUrl as Any)
+            
+        }else {
+            print(Error.self)
+        }
         
         cell.titleCategory.text = self.categories[indexPath.row].title
-        
-        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let categoryFound  = self.storyboard!.instantiateViewController(withIdentifier: "CategoryFindTableViewController") as! CategoryFindTableViewController
+        self.navigationController?.pushViewController(categoryFound, animated: true)
     }
 }
 
