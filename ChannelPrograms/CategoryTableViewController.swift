@@ -29,7 +29,6 @@ class CategoryTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-         self.tableView.reloadData()
     }
     
     func defaultCategories() {
@@ -48,11 +47,11 @@ class CategoryTableViewController: UITableViewController {
                                 
                             let newCategory = CategoryData()
                             newCategory.id = category.id!
+                                
                             newCategory.title = category.title!
                             newCategory.picture = category.pictures
                             
                             self.realm.add(newCategory, update: true)
-                            print(newCategory.picture)
                         }
                     }
                 }
@@ -65,7 +64,7 @@ class CategoryTableViewController: UITableViewController {
     
     func verifyUrl (urlString: String?) -> Bool {
         if let urlString = urlString {
-            if let url  = NSURL(string: urlString) {
+            if let url  = URL(string: urlString) {
                 return UIApplication.shared.canOpenURL(url as URL)
             }
         }
@@ -88,30 +87,29 @@ class CategoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         
         let imageUrl = self.categories[indexPath.row].picture
-        
-        print(self.categories[indexPath.row].picture)
-        
-        let flag = true
 
-        if flag ==  self.verifyUrl(urlString: imageUrl) {
-            
+        if self.verifyUrl(urlString: imageUrl) {
             cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
-            
-            print (verifyUrl)
-            print(imageUrl as Any)
-            
         }else {
             print(Error.self)
         }
         
         cell.titleCategory.text = self.categories[indexPath.row].title
+        
+        cell.textLabel?.tag = self.categories[indexPath.row].id
+        cell.textLabel?.isHidden = false
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
+        
         let categoryFound  = self.storyboard!.instantiateViewController(withIdentifier: "CategoryFindTableViewController") as! CategoryFindTableViewController
         self.navigationController?.pushViewController(categoryFound, animated: true)
+        
+        print(cell.textLabel?.tag as Any)
     }
 }
 
@@ -124,11 +122,14 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+                else {
+                    return
+                }
             DispatchQueue.main.async() { () -> Void in
                 self.image = image
             }
-            }.resume()
+        }.resume()
+
     }
 }
 

@@ -32,7 +32,7 @@ class ProgramTableViewController: UITableViewController {
     
     func downloadPrograms(for timestamp: NSNumber) {
         
-        if prog.count == 0 {
+       if prog.count == 0 {
         
         Alamofire.request("http://52.50.138.211:8080/ChanelAPI/programs/\(timestamp)").responseArray { (response: DataResponse<[PrograToDayModel]>) in
             
@@ -40,7 +40,7 @@ class ProgramTableViewController: UITableViewController {
             
             if let programlArray = programlArray {
                 for program in programlArray {
-                   // self.programs.append(program)
+                   self.programs.append(program)
                     
                     try! self.realm.write() {
                         
@@ -51,8 +51,14 @@ class ProgramTableViewController: UITableViewController {
                         newProgram.desc = program.description!
                         newProgram.time = program.time!
                         
-                        self.realm.add(newProgram, update: true)
+                        print(newProgram.title)
+                        print(newProgram.desc)
+                        print(newProgram.time)
+                            print(newProgram.date)
                         
+                        
+                        self.realm.add(newProgram, update: true)
+                
                     }
                 }
             }
@@ -61,7 +67,7 @@ class ProgramTableViewController: UITableViewController {
                 self.prog = self.realm.objects(ProgramData.self)
                 }
             }
-        }else{
+       }else{
         
         }
     }
