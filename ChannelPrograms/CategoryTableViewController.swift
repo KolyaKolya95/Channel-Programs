@@ -39,30 +39,34 @@ class CategoryTableViewController: UITableViewController {
         
         if categories.count == 0 {
             
-                let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
+            let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
+            
+            Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
                 
-                Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
-                    
-                    let categorylArray = response.result.value
-                    
-                    if let categorylArray = categorylArray {
-                        for category in categorylArray {
+                let categorylArray = response.result.value
+                
+                if let categorylArray = categorylArray {
+                    for category in categorylArray {
+                        do {
                             try! self.realm.write() {
                                 
-                            let newCategory = CategoryData()
-                            newCategory.id = category.id!
+                                let newCategory = CategoryData()
+                                newCategory.id = category.id!
+                                newCategory.title = category.title!
+                                newCategory.picture = category.pictures
                                 
-                            newCategory.title = category.title!
-                            newCategory.picture = category.pictures
-                            
-                            self.realm.add(newCategory, update: true)
+                                self.realm.add(newCategory, update: true)
+                            }
+                        }catch let error as NSError{
+                            print(error.localizedDescription as Any)
                         }
                     }
                 }
+                }
             }
+            DispatchQueue.main.async{
             self.tableView.reloadData()
-            categories = realm.objects(CategoryData.self)
-        }else{
+            self.categories = self.realm.objects(CategoryData.self)
         }
     }
     

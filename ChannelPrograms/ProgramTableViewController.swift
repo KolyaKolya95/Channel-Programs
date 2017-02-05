@@ -21,10 +21,19 @@ class ProgramTableViewController: UITableViewController {
     
     var programs = [PrograToDayModel]()
     
+    var activitiIndication: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     lazy var prog: Results<ProgramData> = { self.realm.objects(ProgramData.self) }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activitiIndication.center = self.view.center
+        activitiIndication.hidesWhenStopped = true
+        activitiIndication.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activitiIndication)
+        activitiIndication.backgroundColor = UIColor.orange
+        
         let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
         self.downloadPrograms(for: timeStamp)
         self.tableView.reloadData()
@@ -33,6 +42,8 @@ class ProgramTableViewController: UITableViewController {
     func downloadPrograms(for timestamp: NSNumber) {
         
        if prog.count == 0 {
+        
+        
         
         Alamofire.request("http://52.50.138.211:8080/ChanelAPI/programs/\(timestamp)").responseArray { (response: DataResponse<[PrograToDayModel]>) in
             
@@ -43,6 +54,8 @@ class ProgramTableViewController: UITableViewController {
                    self.programs.append(program)
                     
                     try! self.realm.write() {
+                        
+                        self.activitiIndication.startAnimating()
                         
                         let newProgram = ProgramData()
                         newProgram.channel_id = program.channel_id!
@@ -70,6 +83,7 @@ class ProgramTableViewController: UITableViewController {
        }else{
         
         }
+        activitiIndication.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
