@@ -31,6 +31,7 @@ class ProgramTableViewController: UITableViewController {
         
      
         let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
+        print(timeStamp)
         self.downloadPrograms(for: timeStamp)
         self.tableView.reloadData()
        

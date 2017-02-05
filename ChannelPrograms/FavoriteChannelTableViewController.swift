@@ -17,9 +17,10 @@ class FavoriteChannelTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reload()
         
-        if ArrayFavorite == nil {
+        
+        if ArrayFavorite.count != 0{
+            reload()
             self.tableView.reloadData()
         }else{
           self.tableView.reloadData()   

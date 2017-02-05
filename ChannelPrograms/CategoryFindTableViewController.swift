@@ -33,7 +33,6 @@ class CategoryFindTableViewController: UITableViewController{
                 self.FindChannelArray.append(channel.name)
                 print(channel.name)
             }
-            
         }
         self.tableView.reloadData()
          print(idForFound)
@@ -58,7 +57,6 @@ class CategoryFindTableViewController: UITableViewController{
         return self.FindChannelArray.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindFilmCategoryTableViewCell", for: indexPath) as! FindFilmCategoryTableViewCell
         
