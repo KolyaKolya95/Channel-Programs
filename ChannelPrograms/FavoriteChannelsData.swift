@@ -11,6 +11,12 @@ import RealmSwift
 
 
 class FavoriteChannelsData: Object {
+    dynamic var id = ""
     dynamic var title = ""
     dynamic var image = ""
+     dynamic var created = NSDate()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

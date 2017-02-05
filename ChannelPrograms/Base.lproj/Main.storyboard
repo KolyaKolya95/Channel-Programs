@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="xZ6-N6-ta4" customClass="FavoriteChannelTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteChannelTableViewCell" rowHeight="90" id="xZ6-N6-ta4" customClass="FavoriteChannelTableViewCell" customModule="ChannelPrograms" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZ6-N6-ta4" id="e22-Hi-2ym">
@@ -54,7 +54,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNH-7x-NH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2632.5" y="-559.85915492957747"/>
+            <point key="canvasLocation" x="2653" y="-148"/>
         </scene>
         <!--All Channel Table View Controller-->
         <scene sceneID="qIK-uR-LJP">
@@ -394,7 +394,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bth-7F-1j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-558"/>
+            <point key="canvasLocation" x="1868" y="-147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nxe-NZ-qWz">

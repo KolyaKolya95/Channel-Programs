@@ -21,6 +21,8 @@ class AllChannelTableViewController: UITableViewController {
     let realm = try! Realm()
     
     lazy var channels: Results<ChannelData> = { self.realm.objects(ChannelData.self) }()
+    
+    lazy var ArrayFavorite: Results<FavoriteChannelsData> = {self.realm.objects(FavoriteChannelsData.self)}()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,5 +94,23 @@ class AllChannelTableViewController: UITableViewController {
         SVProgressHUD.dismiss()
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        SVProgressHUD.showSuccess(withStatus: "Good")
+        
+        let cellFavorite = self.channels[indexPath.row]
+        
+        try! self.realm.write() {
+            let newChannel = FavoriteChannelsData()
+            newChannel.id = "\(cellFavorite.idChannel)"
+            newChannel.title = cellFavorite.name
+            newChannel.image = cellFavorite.picture
+            
+            print(newChannel.title)
+            
+            self.realm.add(newChannel, update: true)
+        }
+        self.ArrayFavorite = self.realm.objects(FavoriteChannelsData.self)
     }
 }

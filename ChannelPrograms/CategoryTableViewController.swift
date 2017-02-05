@@ -29,7 +29,6 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultCategories()
-        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,27 +44,23 @@ class CategoryTableViewController: UITableViewController {
             let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
             
             Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
-                
                 let categorylArray = response.result.value
-                
                 if let categorylArray = categorylArray {
                     for category in categorylArray {
-                        
                         try! self.realm.write() {
-                            
                             let newCategory = CategoryData()
                             newCategory.id = category.id!
                             newCategory.title = category.title!
                             newCategory.picture = category.pictures
+                            print(newCategory.picture)
+                            print(newCategory.title)
                             
                             self.realm.add(newCategory, update: true)
                         }
                     }
                 }
                 DispatchQueue.main.async{
-                    
                     self.categories = self.realm.objects(CategoryData.self)
-                    
                     self.tableView.reloadData()
                 }
             }

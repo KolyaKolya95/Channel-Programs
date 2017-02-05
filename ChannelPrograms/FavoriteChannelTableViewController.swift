@@ -7,40 +7,67 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FavoriteChannelTableViewController: UITableViewController {
-
-    var nameChannel : String = ""
     
-    var ArrayFavorite = [String]()
+    let realm = try! Realm()
+    
+    lazy var ArrayFavorite: Results<FavoriteChannelsData> = {self.realm.objects(FavoriteChannelsData.self)}()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  ArrayFavorite.append(SaveChannel)
-         //print("\(nameChannel)")
-         print(self.ArrayFavorite.count)
-        self.tableView.reloadData()
+        reload()
+        //DispatchQueue.main.async{}
+        print(ArrayFavorite.count)
     }
     
+    func reload(){
     
-
+    self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(ArrayFavorite.count)
         return self.ArrayFavorite.count
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+       var cell = self.ArrayFavorite[indexPath.row].title
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+         // cell.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+    }
+    
+ 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FavoriteChannelTableViewCell
-        cell.titleFavorite.text = self.ArrayFavorite[indexPath.row]
+    
+        
+let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteChannelTableViewCell", for: indexPath) as! FavoriteChannelTableViewCell
+    
+        cell.titleFavorite.text = self.ArrayFavorite[indexPath.row].title
+       // cell.imageFavorite.image = self.ArrayFavorite[indexPath.row].image
+        
         return cell
     }
+   
 }

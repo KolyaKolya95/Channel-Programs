@@ -14,13 +14,13 @@ class CategoryFindTableViewController: UITableViewController{
 
     var idForFound = 0
     
-  //  var ArrayChannel = [ChannelData]()
-    
     let realm = try! Realm()
     
     lazy var ArrayChannel: Results<ChannelData> = { self.realm.objects(ChannelData.self) }()
     
-    var FindChannelArray = [String]()
+    lazy var ArrayFavorite: Results<FavoriteChannelsData> = {self.realm.objects(FavoriteChannelsData.self)}()
+    
+    var FindChannelArray = [String : String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,6 @@ class CategoryFindTableViewController: UITableViewController{
             print(ArrayChannel)
             if  channel.category_id == idForFound {
                 
-                FindChannelArray.append(channel.name)
                 print(channel.name)
             }
             
@@ -53,15 +52,12 @@ class CategoryFindTableViewController: UITableViewController{
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
          print(self.FindChannelArray.count)
         return self.FindChannelArray.count
-       
     }
 
     
@@ -75,13 +71,19 @@ class CategoryFindTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SVProgressHUD.showSuccess(withStatus: "Good")
-        let favoriteChannel  = self.storyboard!.instantiateViewController(withIdentifier: "FavoriteChannelTableViewController") as! FavoriteChannelTableViewController
-        let  cell = self.ArrayChannel[indexPath.row].name
         
-        favoriteChannel.ArrayFavorite = [cell]
-        self.navigationController?.pushViewController(favoriteChannel, animated: true)
+        let cellFavorite = self.ArrayChannel[indexPath.row]
         
-        print()
-        
+        try! self.realm.write() {
+            let newChannel = FavoriteChannelsData()
+            newChannel.id = "\(cellFavorite.idChannel)"
+            newChannel.title = cellFavorite.name
+            newChannel.image = cellFavorite.picture
+            
+            print(newChannel.title)
+            
+            self.realm.add(newChannel, update: true)
+        }
+        self.ArrayFavorite = self.realm.objects(FavoriteChannelsData.self)
     }
  }
