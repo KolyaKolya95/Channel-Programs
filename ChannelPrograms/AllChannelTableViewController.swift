@@ -58,9 +58,7 @@ class AllChannelTableViewController: UITableViewController {
                     }
                 }
                 DispatchQueue.main.async{
-                    //First set array
                     self.channels = self.realm.objects(ChannelData.self)
-                    //Now reload the tableView
                     self.tableView.reloadData()
                 }
             }
@@ -78,11 +76,11 @@ class AllChannelTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // self.tableView.reloadData()
         return self.channels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AllChannelTableViewCell
         
         let strUrl = channels[indexPath.row].picture
@@ -97,7 +95,7 @@ class AllChannelTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        SVProgressHUD.showSuccess(withStatus: "Good")
+        SVProgressHUD.showSuccess(withStatus: "Add to Favorite")
         
         let cellFavorite = self.channels[indexPath.row]
         
@@ -108,9 +106,11 @@ class AllChannelTableViewController: UITableViewController {
             newChannel.image = cellFavorite.picture
             
             print(newChannel.title)
+             self.tableView.reloadData()
             
             self.realm.add(newChannel, update: true)
         }
+         self.tableView.reloadData()
         self.ArrayFavorite = self.realm.objects(FavoriteChannelsData.self)
     }
 }

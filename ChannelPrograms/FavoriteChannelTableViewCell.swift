@@ -9,8 +9,6 @@
 import UIKit
 
 class FavoriteChannelTableViewCell: UITableViewCell {
-
     @IBOutlet weak var imageFavorite: UIImageView!
-    
     @IBOutlet weak var titleFavorite: UILabel!
 }

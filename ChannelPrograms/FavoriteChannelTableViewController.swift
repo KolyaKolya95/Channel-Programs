@@ -17,22 +17,6 @@ class FavoriteChannelTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        if ArrayFavorite.count != 0{
-            reload()
-            self.tableView.reloadData()
-        }else{
-          self.tableView.reloadData()   
-        }
-        
-        print(ArrayFavorite.count)
-    }
-    
-    func reload(){
-        DispatchQueue.main.async{
-    self.tableView.reloadData()
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,35 +35,31 @@ class FavoriteChannelTableViewController: UITableViewController {
         return self.ArrayFavorite.count
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool{
         return true
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-       var cell = self.ArrayFavorite[indexPath.row].title
-        
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-         // cell.remove(at: indexPath.row)
+        if editingStyle == UITableViewCellEditingStyle.delete{
+            try! realm.write {
+                self.realm.delete(self.ArrayFavorite[indexPath.row])
+            }
             self.tableView.reloadData()
         }
     }
     
- 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
         
-let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteChannelTableViewCell", for: indexPath) as! FavoriteChannelTableViewCell
-    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteChannelTableViewCell", for: indexPath) as! FavoriteChannelTableViewCell
+        
         let url = self.ArrayFavorite[indexPath.row].image
         
         cell.titleFavorite.text = self.ArrayFavorite[indexPath.row].title
-       // cell.imageFavorite.image = self.ArrayFavorite[indexPath.row].image
-        
+       
         cell.imageFavorite.downloadFrom(url: URL(string: url)!)
         
         return cell
     }
-   
+    
 }

@@ -9,11 +9,7 @@
 import UIKit
 
 class AllChannelTableViewCell: UITableViewCell {
-
-
     @IBOutlet weak var imageChannel: UIImageView!
-
     @IBOutlet weak var nameChannel: UILabel!
-    
     @IBOutlet weak var urlChannel: UILabel!
 }

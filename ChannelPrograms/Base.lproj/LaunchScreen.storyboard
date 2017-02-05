@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,12 +32,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rtv1" translatesAutoresizingMaskIntoConstraints="NO" id="i4f-Cx-zEV">
+                                <rect key="frame" x="16" y="283" width="100" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="GJw-1J-kq8"/>
+                                    <constraint firstAttribute="height" constant="100" id="Lv5-fQ-DmH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.74117647058823533" green="0.17647058823529413" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="i4f-Cx-zEV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="G67-pg-20e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i4f-Cx-zEV" secondAttribute="trailing" constant="243" id="GnZ-k3-12j"/>
                             <constraint firstItem="LSC-1j-x5a" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="263" id="TVj-I5-iBv"/>
                             <constraint firstItem="LSC-1j-x5a" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="eyP-4p-DvN"/>
                             <constraint firstAttribute="trailing" secondItem="LSC-1j-x5a" secondAttribute="trailing" id="lbw-e3-XRA"/>
+                            <constraint firstItem="i4f-Cx-zEV" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="263" id="plN-Pb-qm4"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,4 +57,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rtv1" width="512" height="512"/>
+    </resources>
 </document>

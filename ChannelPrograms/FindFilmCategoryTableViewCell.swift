@@ -9,8 +9,6 @@
 import UIKit
 
 class FindFilmCategoryTableViewCell: UITableViewCell {
-
     @IBOutlet weak var tvImages: UIImageView!
-
     @IBOutlet weak var titleTv: UILabel!
 }

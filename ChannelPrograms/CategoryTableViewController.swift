@@ -15,14 +15,14 @@ import RealmSwift
 import SVProgressHUD
 
 class CategoryTableViewController: UITableViewController {
-
+    
     var categoryChannel = [AllCategoryModel]()
     
     let realm = try! Realm()
     
-    var delegate: saveIdCategory?
-    
     var idCategories = 0
+    
+    var idPep : Int = 0
     
     lazy var categories: Results<CategoryData> = { self.realm.objects(CategoryData.self) }()
     
@@ -66,8 +66,7 @@ class CategoryTableViewController: UITableViewController {
             }
         }
     }
-
-
+    
     func verifyUrl (urlString: String?) -> Bool {
         if let urlString = urlString {
             if let url  = URL(string: urlString) {
@@ -84,9 +83,7 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     //   print(self.categories.count as Any)
         return self.categories.count
-       
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,8 +104,6 @@ class CategoryTableViewController: UITableViewController {
         return cell
         
     }
-    
-    var idPep : Int = 0
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -136,11 +131,11 @@ extension UIImageView {
                 let image = UIImage(data: data)
                 else {
                     return
-                }
+            }
             DispatchQueue.main.async() { () -> Void in
                 self.image = image
             }
-        }.resume()
+            }.resume()
     }
 }
 

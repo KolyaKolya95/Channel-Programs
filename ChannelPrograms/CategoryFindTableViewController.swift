@@ -11,7 +11,7 @@ import RealmSwift
 import SVProgressHUD
 
 class CategoryFindTableViewController: UITableViewController{
-
+    
     var idForFound = 0
     
     let realm = try! Realm()
@@ -27,7 +27,7 @@ class CategoryFindTableViewController: UITableViewController{
         
         print(ArrayChannel.count)
         for channel in ArrayChannel {
-
+            
             print(ArrayChannel)
             if  channel.category_id == idForFound {
                 self.FindChannelArray.append(channel.name)
@@ -35,29 +35,30 @@ class CategoryFindTableViewController: UITableViewController{
             }
         }
         self.tableView.reloadData()
-         print(idForFound)
+        print(idForFound)
     }
-
+    
     override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func BackCategory(_ sender: Any) {
-         let _ = navigationController?.popViewController(animated: true)
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         print(self.FindChannelArray.count)
+        print(self.FindChannelArray.count)
         return self.FindChannelArray.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindFilmCategoryTableViewCell", for: indexPath) as! FindFilmCategoryTableViewCell
         
         let url = self.ArrayChannel[indexPath.row].picture
@@ -69,7 +70,8 @@ class CategoryFindTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        SVProgressHUD.showSuccess(withStatus: "Good")
+        
+        SVProgressHUD.showSuccess(withStatus: "Add to Favorite")
         
         let cellFavorite = self.ArrayChannel[indexPath.row]
         
@@ -80,9 +82,10 @@ class CategoryFindTableViewController: UITableViewController{
             newChannel.image = cellFavorite.picture
             
             print(newChannel.title)
-            
+             self.tableView.reloadData()
             self.realm.add(newChannel, update: true)
         }
+         self.tableView.reloadData()
         self.ArrayFavorite = self.realm.objects(FavoriteChannelsData.self)
     }
- }
+}
