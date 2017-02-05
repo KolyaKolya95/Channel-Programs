@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SVProgressHUD
 
 class CategoryFindTableViewController: UITableViewController{
 
@@ -24,10 +25,14 @@ class CategoryFindTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.show(withStatus: "Dowload")
+        
         print(ArrayChannel.count)
         for channel in ArrayChannel {
+
             print(ArrayChannel)
             if  channel.category_id == idForFound {
+                
                 FindChannelArray.append(channel.name)
                 print(channel.name)
             }
@@ -64,8 +69,19 @@ class CategoryFindTableViewController: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindFilmCategoryTableViewCell", for: indexPath) as! FindFilmCategoryTableViewCell
         
         cell.titleTv.text = self.ArrayChannel[indexPath.row].name
-        
-        
+        SVProgressHUD.dismiss()
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        SVProgressHUD.showSuccess(withStatus: "Good")
+        let favoriteChannel  = self.storyboard!.instantiateViewController(withIdentifier: "FavoriteChannelTableViewController") as! FavoriteChannelTableViewController
+        let  cell = self.ArrayChannel[indexPath.row].name
+        
+        favoriteChannel.ArrayFavorite = [cell]
+        self.navigationController?.pushViewController(favoriteChannel, animated: true)
+        
+        print()
+        
     }
  }

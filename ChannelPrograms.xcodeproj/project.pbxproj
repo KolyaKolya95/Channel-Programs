@@ -18,6 +18,8 @@
 		EB05C4681E3F83E400C367D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB05C4661E3F83E400C367D2 /* LaunchScreen.storyboard */; };
 		EB05C4731E3F83E500C367D2 /* ChannelProgramsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C4721E3F83E500C367D2 /* ChannelProgramsTests.swift */; };
 		EB05C47E1E3F83E500C367D2 /* ChannelProgramsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05C47D1E3F83E500C367D2 /* ChannelProgramsUITests.swift */; };
+		EB09E25D1E47768B00C2EF0E /* FavoriteChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09E25C1E47768B00C2EF0E /* FavoriteChannelTableViewCell.swift */; };
+		EB31DB371E4784420014F420 /* FavoriteChannelsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31DB361E4784420014F420 /* FavoriteChannelsData.swift */; };
 		EB3D6B7B1E434DE000D1EE91 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D6B7A1E434DE000D1EE91 /* CategoryData.swift */; };
 		EB3D6B7D1E434E0000D1EE91 /* ChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D6B7C1E434E0000D1EE91 /* ChannelData.swift */; };
 		EB3D6B7F1E434E0E00D1EE91 /* ProgramData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D6B7E1E434E0E00D1EE91 /* ProgramData.swift */; };
@@ -78,6 +80,8 @@
 		EB05C4791E3F83E500C367D2 /* ChannelProgramsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChannelProgramsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB05C47D1E3F83E500C367D2 /* ChannelProgramsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelProgramsUITests.swift; sourceTree = "<group>"; };
 		EB05C47F1E3F83E500C367D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB09E25C1E47768B00C2EF0E /* FavoriteChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteChannelTableViewCell.swift; sourceTree = "<group>"; };
+		EB31DB361E4784420014F420 /* FavoriteChannelsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteChannelsData.swift; sourceTree = "<group>"; };
 		EB3D6B7A1E434DE000D1EE91 /* CategoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		EB3D6B7C1E434E0000D1EE91 /* ChannelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelData.swift; sourceTree = "<group>"; };
 		EB3D6B7E1E434E0E00D1EE91 /* ProgramData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramData.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				EB3D6B7C1E434E0000D1EE91 /* ChannelData.swift */,
 				EB3D6B7E1E434E0E00D1EE91 /* ProgramData.swift */,
 				EB053A5B1E44E4F000EA2AF8 /* CategoryChannel.swift */,
+				EB31DB361E4784420014F420 /* FavoriteChannelsData.swift */,
 			);
 			name = ModelRealm;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				EB95878D1E43322D003DCDD3 /* CategoryTableViewCell.swift */,
 				EB9587931E43370A003DCDD3 /* ProgramTableViewCell.swift */,
 				EBC5F9861E4689ED00DAA9BF /* FindFilmCategoryTableViewCell.swift */,
+				EB09E25C1E47768B00C2EF0E /* FavoriteChannelTableViewCell.swift */,
 			);
 			name = "StyleView ";
 			sourceTree = "<group>";
@@ -564,9 +570,11 @@
 				EB48BFD21E412D0D002FE984 /* PrograToDayModel.swift in Sources */,
 				EB3D6B7F1E434E0E00D1EE91 /* ProgramData.swift in Sources */,
 				EB9587921E4336D6003DCDD3 /* ProgramTableViewController.swift in Sources */,
+				EB31DB371E4784420014F420 /* FavoriteChannelsData.swift in Sources */,
 				EBC5F9851E4667F400DAA9BF /* SaveIdCategory.swift in Sources */,
 				EB05C4631E3F83E400C367D2 /* ChannelPrograms.xcdatamodeld in Sources */,
 				EBE611C81E4085DB00161BFA /* AllCnannelModel.swift in Sources */,
+				EB09E25D1E47768B00C2EF0E /* FavoriteChannelTableViewCell.swift in Sources */,
 				EB053A5C1E44E4F000EA2AF8 /* CategoryChannel.swift in Sources */,
 				EBC5F9831E46632800DAA9BF /* SaveChannels.swift in Sources */,
 				EBE611CC1E408A2E00161BFA /* AllChannelTableViewController.swift in Sources */,

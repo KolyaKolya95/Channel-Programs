@@ -11,55 +11,86 @@ import ObjectMapper
 import Alamofire
 import SwiftyJSON
 import AlamofireObjectMapper
+import RealmSwift
+import SVProgressHUD
 
 class AllChannelTableViewController: UITableViewController {
 
-  //  var arrayTable = [AllCnannelModel]()
-
+    var modelChannel = [AllCnannelModel]()
     
+    let realm = try! Realm()
+    
+    lazy var channels: Results<ChannelData> = { self.realm.objects(ChannelData.self) }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaultChannel()
+    }
+    
+    func defaultChannel() {
         
-//        let URL = "http://52.50.138.211:8080/ChanelAPI/chanels"
-//    
-//        Alamofire.request(URL).responseObject { (response: DataResponse<AllCnannelModel>) in
-//            
-//        //self.tableView.reloadData()
-//            
-//        }
-        
-        Alamofire.request("http://52.50.138.211:8080/ChanelAPI/chanels").responseJSON { response in
-//            print(response.request as Any)  // original URL request
-//            print(response.response as Any) // HTTP URL response
-//            print(response.data as Any)     // server data
-//            print(response.result)   // result of response serialization
-//            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+        if channels.count == 0 {
+            
+           SVProgressHUD.show(withStatus: "dowload")
+            
+            let URL = "http://52.50.138.211:8080/ChanelAPI/chanels"
+            
+            Alamofire.request(URL).responseArray { (response: DataResponse<[AllCnannelModel]>) in
+                
+                let channelArray = response.result.value
+                
+                if let channelArray = channelArray {
+                    for channel in channelArray {
+                        try! self.realm.write() {
+                            let newChannel = ChannelData()
+                            newChannel.category_id = channel.category_id!
+                            newChannel.idChannel = channel.id!
+                            print(newChannel.idChannel)
+                            newChannel.name = channel.name!
+                            print(newChannel.name)
+                            newChannel.picture = channel.picture
+                            newChannel.url = channel.url!
+                            print(newChannel.url)
+                            self.realm.add(newChannel, update: true)
+                        }
+                    }
+                }
+                DispatchQueue.main.async{
+                    //First set array
+                    self.channels = self.realm.objects(ChannelData.self)
+                    //Now reload the tableView
+                    self.tableView.reloadData()
+                }
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
     }
     
-   // override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
-//        cell.textLabel?.text =
-//        return cell
- //   }
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // self.tableView.reloadData()
+        return self.channels.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AllChannelTableViewCell
+        
+        let strUrl = channels[indexPath.row].picture
+        
+        cell.nameChannel.text = self.channels[indexPath.row].name
+        cell.urlChannel.text = self.channels[indexPath.row].url
+        cell.imageChannel.downloadFrom(url: URL(string: strUrl)!)
+        
+        SVProgressHUD.dismiss()
+        
+        return cell
+    }
 }

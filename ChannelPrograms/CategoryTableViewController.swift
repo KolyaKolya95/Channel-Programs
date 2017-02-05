@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 import AlamofireObjectMapper
 import RealmSwift
+import SVProgressHUD
 
 class CategoryTableViewController: UITableViewController {
 
@@ -39,6 +40,8 @@ class CategoryTableViewController: UITableViewController {
         
         if categories.count == 0 {
             
+            SVProgressHUD.show(withStatus: "dowload")
+            
             let URL = "http://52.50.138.211:8080/ChanelAPI/categories"
             
             Alamofire.request(URL).responseArray { (response: DataResponse<[AllCategoryModel]>) in
@@ -47,29 +50,29 @@ class CategoryTableViewController: UITableViewController {
                 
                 if let categorylArray = categorylArray {
                     for category in categorylArray {
-                        do {
-                            try! self.realm.write() {
-                                
-                                let newCategory = CategoryData()
-                                newCategory.id = category.id!
-                                newCategory.title = category.title!
-                                newCategory.picture = category.pictures
-                                
-                                self.realm.add(newCategory, update: true)
-                            }
-                        }catch let error as NSError{
-                            print(error.localizedDescription as Any)
+                        
+                        try! self.realm.write() {
+                            
+                            let newCategory = CategoryData()
+                            newCategory.id = category.id!
+                            newCategory.title = category.title!
+                            newCategory.picture = category.pictures
+                            
+                            self.realm.add(newCategory, update: true)
                         }
                     }
                 }
+                DispatchQueue.main.async{
+                    
+                    self.categories = self.realm.objects(CategoryData.self)
+                    
+                    self.tableView.reloadData()
                 }
             }
-            DispatchQueue.main.async{
-            self.tableView.reloadData()
-            self.categories = self.realm.objects(CategoryData.self)
         }
     }
-    
+
+
     func verifyUrl (urlString: String?) -> Bool {
         if let urlString = urlString {
             if let url  = URL(string: urlString) {
@@ -95,7 +98,7 @@ class CategoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         
         let imageUrl = self.categories[indexPath.row].picture
-
+        
         if self.verifyUrl(urlString: imageUrl) {
             cell.fotoCat.downloadFrom(url: URL(string: imageUrl)!)
         }else {
@@ -103,30 +106,18 @@ class CategoryTableViewController: UITableViewController {
         }
         
         cell.titleCategory.text = self.categories[indexPath.row].title
+        
+        SVProgressHUD.dismiss()
+        
         return cell
         
     }
     
-    
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    
-//        let categoryFound  = self.storyboard!.instantiateViewController(withIdentifier: "CategoryFindTableViewController") as! CategoryFindTableViewController
-//        
-//        let cellIdCategories = self.categories[indexPath.row]
-//
-//        
-//        categoryFound.idForFound = cellIdCategories.id
-//        
-//        present(categoryFound, animated:true, completion: nil)
-//        
-//        s
-//        
-//        print(idPep)
-//    }
     var idPep : Int = 0
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        SVProgressHUD.show(withStatus: "dowload")
         
         let categoryFound  = self.storyboard!.instantiateViewController(withIdentifier: "CategoryFindTableViewController") as! CategoryFindTableViewController
         self.navigationController?.pushViewController(categoryFound, animated: true)
@@ -136,8 +127,7 @@ class CategoryTableViewController: UITableViewController {
         self.idPep = cellIdCategories.id
         
         categoryFound.idForFound = cellIdCategories.id
-       
-       // present(categoryFound, animated:true, completion: nil)
+        
         print(idPep)
     }
 }

@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 import AlamofireObjectMapper
 import RealmSwift
+import SVProgressHUD
 
 class ProgramTableViewController: UITableViewController {
 
@@ -28,22 +29,18 @@ class ProgramTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activitiIndication.center = self.view.center
-        activitiIndication.hidesWhenStopped = true
-        activitiIndication.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activitiIndication)
-        activitiIndication.backgroundColor = UIColor.orange
-        
+     
         let timeStamp = NSNumber(value: Date().timeIntervalSinceNow)
         self.downloadPrograms(for: timeStamp)
         self.tableView.reloadData()
+       
     }
     
     func downloadPrograms(for timestamp: NSNumber) {
         
        if prog.count == 0 {
         
-        
+        SVProgressHUD.show(withStatus: "dowload")
         
         Alamofire.request("http://52.50.138.211:8080/ChanelAPI/programs/\(timestamp)").responseArray { (response: DataResponse<[PrograToDayModel]>) in
             
@@ -55,7 +52,7 @@ class ProgramTableViewController: UITableViewController {
                     
                     try! self.realm.write() {
                         
-                        self.activitiIndication.startAnimating()
+                      //  self.activitiIndication.startAnimating()
                         
                         let newProgram = ProgramData()
                         newProgram.channel_id = program.channel_id!
@@ -80,10 +77,7 @@ class ProgramTableViewController: UITableViewController {
                 self.prog = self.realm.objects(ProgramData.self)
                 }
             }
-       }else{
-        
-        }
-        activitiIndication.stopAnimating()
+       }
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,6 +91,7 @@ class ProgramTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
          return self.prog.count
     }
 
@@ -106,6 +101,7 @@ class ProgramTableViewController: UITableViewController {
         cell.allInfo.text = self.prog[indexPath.row].desc
         cell.date.text = self.prog[indexPath.row].date
         cell.time.text = self.prog[indexPath.row].time
+        SVProgressHUD.dismiss()
         return cell
     }
 }
