@@ -112,8 +112,6 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        SVProgressHUD.show(withStatus: "dowload")
-        
         let categoryFound  = self.storyboard!.instantiateViewController(withIdentifier: "CategoryFindTableViewController") as! CategoryFindTableViewController
         self.navigationController?.pushViewController(categoryFound, animated: true)
         
@@ -143,7 +141,6 @@ extension UIImageView {
                 self.image = image
             }
         }.resume()
-
     }
 }
 

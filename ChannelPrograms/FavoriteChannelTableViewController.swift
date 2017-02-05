@@ -18,13 +18,20 @@ class FavoriteChannelTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reload()
-        //DispatchQueue.main.async{}
+        
+        if ArrayFavorite == nil {
+            self.tableView.reloadData()
+        }else{
+          self.tableView.reloadData()   
+        }
+        
         print(ArrayFavorite.count)
     }
     
     func reload(){
-    
+        DispatchQueue.main.async{
     self.tableView.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,8 +71,12 @@ class FavoriteChannelTableViewController: UITableViewController {
         
 let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteChannelTableViewCell", for: indexPath) as! FavoriteChannelTableViewCell
     
+        let url = self.ArrayFavorite[indexPath.row].image
+        
         cell.titleFavorite.text = self.ArrayFavorite[indexPath.row].title
        // cell.imageFavorite.image = self.ArrayFavorite[indexPath.row].image
+        
+        cell.imageFavorite.downloadFrom(url: URL(string: url)!)
         
         return cell
     }

@@ -20,19 +20,17 @@ class CategoryFindTableViewController: UITableViewController{
     
     lazy var ArrayFavorite: Results<FavoriteChannelsData> = {self.realm.objects(FavoriteChannelsData.self)}()
     
-    var FindChannelArray = [String : String]()
+    var FindChannelArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        SVProgressHUD.show(withStatus: "Dowload")
         
         print(ArrayChannel.count)
         for channel in ArrayChannel {
 
             print(ArrayChannel)
             if  channel.category_id == idForFound {
-                
+                self.FindChannelArray.append(channel.name)
                 print(channel.name)
             }
             
@@ -64,8 +62,11 @@ class CategoryFindTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindFilmCategoryTableViewCell", for: indexPath) as! FindFilmCategoryTableViewCell
         
+        let url = self.ArrayChannel[indexPath.row].picture
+        
         cell.titleTv.text = self.ArrayChannel[indexPath.row].name
-        SVProgressHUD.dismiss()
+        
+        cell.tvImages.downloadFrom(url: URL(string: url)!)
         return cell
     }
     
