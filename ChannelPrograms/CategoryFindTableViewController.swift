@@ -80,12 +80,10 @@ class CategoryFindTableViewController: UITableViewController{
             newChannel.id = "\(cellFavorite.idChannel)"
             newChannel.title = cellFavorite.name
             newChannel.image = cellFavorite.picture
-            
-            print(newChannel.title)
-             self.tableView.reloadData()
+            self.tableView.reloadData()
             self.realm.add(newChannel, update: true)
         }
-         self.tableView.reloadData()
+        self.tableView.reloadData()
         self.ArrayFavorite = self.realm.objects(FavoriteChannelsData.self)
     }
 }
