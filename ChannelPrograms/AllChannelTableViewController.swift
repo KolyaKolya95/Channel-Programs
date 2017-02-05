@@ -47,12 +47,9 @@ class AllChannelTableViewController: UITableViewController {
                             let newChannel = ChannelData()
                             newChannel.category_id = channel.category_id!
                             newChannel.idChannel = channel.id!
-                            print(newChannel.idChannel)
                             newChannel.name = channel.name!
-                            print(newChannel.name)
                             newChannel.picture = channel.picture
                             newChannel.url = channel.url!
-                            print(newChannel.url)
                             self.realm.add(newChannel, update: true)
                         }
                     }

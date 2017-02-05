@@ -52,9 +52,6 @@ class CategoryTableViewController: UITableViewController {
                             newCategory.id = category.id!
                             newCategory.title = category.title!
                             newCategory.picture = category.pictures
-                            print(newCategory.picture)
-                            print(newCategory.title)
-                            
                             self.realm.add(newCategory, update: true)
                         }
                     }
@@ -115,8 +112,6 @@ class CategoryTableViewController: UITableViewController {
         self.idPep = cellIdCategories.id
         
         categoryFound.idForFound = cellIdCategories.id
-        
-        print(idPep)
     }
 }
 
